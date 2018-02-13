@@ -1,0 +1,57 @@
+<header class="clearfix header-main">
+    <div class="menu right">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="active">About Us</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">FAQ's</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+    </div>
+</header>
+<div class="content">
+    <form novalidate class="login-form">
+        <div class="contain">
+                
+            <div class="main_div"> 
+                    <h3>SMARTHEALTH</h3>
+                    <img src="assets/images/new-logo.png" alt="Logo">
+                </div>
+            <div class="inner_div">
+                <mat-form-field>
+                <input matInput name="uname" #username="ngModel" [ngModel]="uname" placeholder="User Name" required pattern="[a-zA-Z][a-zA-Z ]+"><img src="assets/images/side-icon.png" class="sIcon" alt="icon">
+                </mat-form-field>
+                 <!-- <div *ngIf="username?.touched" class="alert alert-danger message">
+                 <div *ngIf="username.errors?.required" class="alert alert-danger message">
+                 User Name is required!
+                 </div>
+                 <div *ngIf="username.errors?.pattern message">Contact Invalid</div>
+                 </div> -->
+            </div>  
+                  
+            <div class="inner_div">
+
+                <mat-form-field>
+                <input type="password" matInput name="pwd" #password="ngModel" placeholder="Password" [ngModel]="pwd"  required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" maxlength="10" minlength="8">
+                <img src="assets/images/side-icon.png" class="sIcon" alt="icon"> 
+                </mat-form-field>
+                <!-- <div *ngIf="password?.touched" class="alert alert-danger message">
+                 <div *ngIf="password.errors?.required" class="alert alert-danger message">
+                 Password is required!
+                 </div>
+                 <div [hidden]="!password?.hasError('minlength')" class="message">Invalid Password!</div>
+                 </div> -->
+                </div>
+                
+            <div class="inner_div clearfix" id="inner_box">
+                <mat-checkbox type="checkbox" class="input_check">Remember me</mat-checkbox>
+                <p class="right">Forgot Password?</p>
+            </div>
+            <div class="inner_div">
+                <button type="submit" name="button" class="btn">Login</button><i class="material-icons right_arrow">arrow_forward</i></div>
+        </div>
+    </form>
+</div>
+<footer>
+    <p>Copyrights &copy; 2018 All Rights Reserved by Smart Health (P) Ltd.</p>
+</footer>

@@ -1,0 +1,94 @@
+<header id="branch-header">
+    <div class="contain clearfix">
+        <div id="logo">
+            <img src="assets/images/logo-main.jpg" alt="logo">
+             </div>
+        <div class="head_name right">
+            <span class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="dropdown" >
+            <i class="material-icons icon2">menu</i>
+            </span>
+            <span class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="menu">
+                <i class="material-icons icon1">arrow_drop_down</i></span>
+            
+            <p id="dr_name" class="right">Dr. Terhan Tripathi</p>
+            <img class="right" src="assets/images/4.jpg" alt="Images">
+        </div>
+    </div>
+  </header>
+  <mat-menu #dropdown="matMenu">
+        <button mat-menu-item class="btn-menu">
+            <span class="menu-span">About Us</span>
+        </button>
+        
+        <button mat-menu-item class="btn-menu">
+             <span class="menu-span">Support</span>
+        </button>
+        <button mat-menu-item class="btn-menu">
+            <span class="menu-span">Tutorials</span>
+        </button>
+        <button mat-menu-item class="btn-menu">
+            <span class="menu-span">FAQ's</span>
+        </button>
+        <button mat-menu-item class="btn-menu">
+          <span class="menu-span">News</span>
+        </button>
+    </mat-menu>
+  <mat-menu #menu="matMenu" id="matMenu">
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-img" src="assets/images/profile-icon.png" alt="profile">
+        <span class="menu-span">PROFILE</span>
+        <button class="edit-menu right" type="submit">EDIT</button>
+    </button>
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-img" src="assets/images/view-icon.png" alt="View">
+        <span class="menu-span">VIEW REPORT</span>
+    </button>
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-img" src="assets/images/setting-icon.png" alt="Setting">
+        <span class="menu-span">SETTING</span>
+    </button>
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-img" src="assets/images/help.png" alt="Help">
+        <span class="menu-span">HELP</span>
+    </button>
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-img" src="assets/images/logout-icon.png" alt="Logout">
+        <span class="menu-span">LOGOUT</span>
+    </button>
+    <button mat-menu-item class="btn-menu">
+        <img class="menu-image" src="assets/images/hospital-icon.png" alt="Image">
+        
+    </button>        
+  </mat-menu>
+  
+  <div class="content clearfix">
+    <div class="main-content-inner-div">
+        <div class="doctor_info col-sm-6">
+            <img class="image" src="assets/images/4.jpg" alt="Images">
+            <p class="welcome">Welcome !</p>
+            <h3>Dr. Trehan Tripathi</h3>
+            <p class="p_designation">Senior Surgeon Oncology</p>
+            <button class="button" type="submit">Go</button>
+        </div>
+    </div>
+     <div class="">
+        <div class="col-sm-6 location_detail right">
+            <div class="location">
+                <img id="loc_icon" src="assets/images/loc2.jpg" alt="location">
+                
+                <p class="para">Choose a Location</p>
+                </div>
+                <div class="location_info">
+                    <form name="test" id="form">
+                        <mat-radio-group class="radio_grp" [(ngModel)]="selectVal" [ngModelOptions]="{standalone: true}">
+                            <mat-radio-button class="radio_btn" (click)="changecolor(location)" [ngClass]="{'click': changeMe(location)}" *ngFor="let location of locations"
+                                [value]="location">{{location}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </form>
+                    <!-- <span style="color: #ff8a4b">{{selectVal}}</span> -->
+                </div>
+            
+        </div>
+    </div>
+  

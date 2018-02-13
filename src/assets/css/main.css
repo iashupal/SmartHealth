@@ -1,0 +1,679 @@
+/* common CSS */
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+    body {
+        margin: 0;
+        padding: 0;
+        /* background-image: url("../assets/images/bg.png"); */
+    /*    height: 60vh;*/
+    }
+
+********************************************************  /* Login CSS */**************************************
+
+/* header css */
+
+.header-main {
+    width: 100%;
+    height: 100px;
+    top: 0%;
+    z-index: 1;
+}
+header .menu {
+    width: 400px;
+    margin: 10px 2%;
+}
+
+
+header .menu ul {
+/*    font-family: 'Open Sans Regular';*/
+/*    font-family: 'OPENSANS-REGULAR';*/
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #cfcfcf;
+    color: #787887;
+    
+/*    padding: 13px 0;*/
+    border-radius: 5px;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+
+
+
+header .menu ul li {
+    display: inline;
+    list-style: none;
+
+    
+/*        font-family: 'Open Sans', sans-serif;*/
+    /* padding: 8px 11px; */
+    font-size: 14px;
+    font-weight: bold;
+    border-right: 1px solid #cfcfcf;
+    border-collapse: collapse;
+    /*    line-height: 3.2;*/
+}
+
+header .menu ul li:last-child{
+    border-right: 0px;
+}
+li a {
+    text-decoration: none;
+    color: #787887;
+    padding: 5px;
+}
+               /*Login-form css  */
+               .content {
+                width: 100%;
+            /*    padding-top: 2%;*/
+                display: table;
+                height: 100%;
+            }
+            form{
+            /*    display: table-cell;*/
+                vertical-align: middle;
+                padding-top: 16px;
+                width: 26%;
+                border: 1px solid #cfcfcf;
+                box-shadow: 1px 0px 18px #c3c3c2;
+                margin-left: 37%;
+                background-color: #ffffff;
+                margin-top: 3%;
+                font-family: 'Open Sans', sans-serif;
+            /*    font-family: 'OPENSANS-SEMIBOLD';*/
+                border-radius: 8px;
+            }
+            form .main_div {
+                margin-left: 5%;
+                margin-bottom: 30px;
+                position: relative;
+            }
+            
+            form .main_div img {
+                display: inline-block;
+                padding-top: 20px;
+                /*    background-color: white;*/
+                    color: #ff8a4b;
+                margin-left: 10px;
+                width: 240px;
+            }
+            
+            form .main_div h3 {
+                display: inline-block;
+                color: #787887;
+                /* font-weight: bold; */
+                font-size: 24px;
+                position: absolute;
+                margin-left: 10px;
+                top: 40%;
+                padding: 0px;
+                
+            }
+            
+            span {
+                color: #787887;
+            /*    font-family: 'OPENSANS-REGULAR' !important;*/
+                font-weight: 100;
+            }
+            
+            form .inner_div {
+            
+            /*    margin-left: 8%;*/
+                margin-bottom: 10px;
+            position: relative;
+                width: 85%;
+                margin: auto;
+            }
+            .mat-form-field{
+                width: 100%;
+            }
+            /*
+            form .inner_div label {
+                color: #787887;
+                font-size: 16px;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+            */
+            
+            form .inner_div input {
+            /*    border: none;*/
+                width: 98%;
+                font-family: 'Open Sans', sans-serif;
+            /*    border-bottom: 1.3px solid #787887;*/
+            /*    padding: 0;*/
+            /*    outline: none;*/
+            /*    position: relative;*/
+            /*    display: inline-block;*/
+            /*    padding-left: 2%;*/
+            /*    margin-bottom: 34px;*/
+                color: #787887;
+                font-size: 16px;
+                font-weight: bold;
+            /*    padding-bottom: 10px;*/
+            /*    color: #dadada;*/
+            }
+             .input_check{
+                 font-size: 13px;
+                color: #9999a5;
+                 font-family: 'Open Sans', sans-serif;
+            /*
+                 
+                 font-weight: 0 !important;
+            */
+            }
+            form #inner_box {
+                margin-bottom: 13%;
+                margin-top: 5px;
+            /*        font-size: 13px;*/
+                    color: gray;
+                
+            }
+            .sIcon{
+                position: absolute;
+                top: 22px;
+            /*    right: 2px;*/
+            }
+            .message{
+                color: #ff8a4b;
+                font-size: 12px;
+            }
+            
+            
+            
+            /*
+            form .input_check {
+                color: grey !important;
+                font-size: 12px !important;
+                
+            }
+            */
+            
+            form p {
+                margin-top: 2px;
+                font-size: 14px;
+                
+                font-weight: bold;
+                display: inline-block;
+                color: #787887;
+                margin-bottom: 10px;
+            
+            /*    font-family: 'OPENSANS-SEMIBOLD';*/
+            }
+            
+            form .inner_div .btn {
+                position: relative;
+                background-color: #ff8a4b;
+                border: 1px;
+                border-radius: 26px;
+                padding: 15px 41%;
+                color: #ffffff;
+                font-weight: bold;
+                font-size: 16px;
+                margin-left: 5px;
+                margin-bottom: 12%;
+            }
+            
+            form .inner_div .right_arrow {
+                position: absolute;
+                color: #ffffff;
+                font-size: 20px;
+                padding: 16px;
+                margin-top: 0;
+                border-bottom-right-radius: 50%;
+                border-top-right-radius: 50%;
+                margin-left: -45px;
+                background-color: #ff7f3a;
+            }
+            .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+                background-color: #c3c3c2 !important;
+            }
+            
+            .mat-checkbox-inner-container .mat-checkbox-frame{
+                border-width: 1px !important;
+            }
+            
+            
+            .mat-checkbox-layout .mat-checkbox-label{
+                font-size: 14px !important;
+            }
+            
+            
+ /*footer css  */
+ footer {
+    width: 100%;
+    height: 50px;
+    margin-top: 2%;
+}
+
+footer p {
+font-family: 'Open Sans', sans-serif;
+/*    font-family: 'OPENSANS-REGULAR';*/
+/*    margin: 5px 20px;*/
+    font-size: 12px;
+    text-align: center;
+    color: #787887;
+    font-weight: 600;
+}
+/*Responsive code
+1200
+1024
+992
+768
+640
+*/
+
+/*
+
+
+/*1024px css code*/
+@media screen and (max-width:1199px) and (min-width:1024px){
+    header .menu{
+        width: 42%;
+        margin: 5px 2%;
+    }
+    /* form .main_div h3{
+        left: 31%;
+        top: 19%;
+    } */
+    form{
+        width: 30%;
+        margin-left: 35%;
+    }
+    .sIcon{
+        top: 22px;
+    }
+    form p{
+        /* margin-top: -25px; */
+        font-size: 12px;
+    }
+    .input_check{
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 0 !important;
+}
+}
+/*992px css code*/
+@media screen and (max-width:1023px) and (min-width:992px){
+    header .menu{
+        width: 43%;
+        margin: 10px 2%;
+    }
+    /* form .main_div h3{
+        left: 29%;
+        top: 19%;
+    } */
+    form{
+        width: 30%;
+        margin-left: 35%;
+    }
+    .sIcon{
+        top: 22px;
+    }
+    form p{
+        /* margin-top: -25px; */
+        font-size: 12px;
+    }
+    .input_check{
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 0 !important;
+}
+    form .inner_div .right_arrow{
+        margin-left: 205px;
+        margin-top: -81px;
+        font-size: 17px;
+    }
+}
+
+
+
+/* Branch CSS */
+**************************************************/* branch header */****************************************
+#branch-header .contain {
+    height: 70px;
+    width: 100%;
+}
+
+#branch-header {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    top: 0%;
+    z-index: 1;
+    position: absolute;
+    box-shadow: 1px 1px 10px gray;
+}
+
+#logo {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+}
+
+    #logo img {
+        height: 70px;
+        z-index: 1;
+    }
+
+    #branch-header .head_name {
+    width: 70%;
+    height: 70px;
+    position: relative;
+    display: inline-block;
+    
+    text-align: right;
+}
+
+#branch-header .head_name img {
+        height: 45px;
+        margin-top: 13px;
+        margin-right: 10px;
+        
+    }
+
+    #branch-header .head_name p {
+        display: inline-block;
+        color: #787887;
+        
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    #branch-header .head_name .icon1 {
+        color: #ff8a4b;
+        font-size: 24px;
+        margin-top: 36px;
+        padding-right: 15px;
+        margin-left: 15px;
+        cursor: pointer;
+        line-height: 0;
+    }
+
+    #branch-header .head_name .icon2 {
+        font-size: 21px;
+        color: #cccccc;
+        float: right;
+        padding-left: 20px;
+        border-left: 1px solid #dadada;
+        height: 70px;
+        margin-left: 20px;
+        line-height: 3.2;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+button.mat-menu-item{
+    border-bottom:1px solid #dadada;
+    font-size: 14px;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.menu-span{
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.edit-menu{
+    background-color: #ebebf0;
+    color: #82828f;
+    margin-top: 10px;
+    border:none;
+    border-radius: 22px;
+    font-family: "Open Sans";
+    line-height: 22px;
+    letter-spacing: 0.05rem;
+    padding: 0px 13px;
+    font-weight: bold;
+    font-size: 11px;
+    font-weight: bold;
+}
+.btn-menu .menu-image{
+    margin-left: 56%;
+}
+button.mat-menu-item:last-child{
+border-bottom: none;
+}
+.menu-btn-icon{
+    float: right !important;
+    width: 63px !important;
+    /* display: inline-block; */
+    /* width: 0;
+    height: 0; */
+}
+.menu-img{
+    width: 18px;
+}
+.mat-menu-content{
+    padding-top: 1px !important;
+}
+***************************************************/* branch content */
+.main-content-inner-div {
+    display: table-cell;
+    margin: 0;
+/*    vertical-align: middle;*/
+    text-align: center;
+/*    padding-top: 70px;*/
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: table;
+    margin-top: 5%;
+/*    background-image: url("");*/
+}
+.content .doctor_info {
+    width: 50%;
+    margin-top: -3%;
+    display: inline-block;
+    position: relative;
+}
+
+.content .image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 20px;
+    background: white;
+    box-shadow: 1px 0px 18px #C3c2c2;
+    margin-top: 25%;
+    margin-left: 58%;
+}
+
+ .welcome {
+    text-align: center;
+    font-size: 18px;
+    font-family: "Open Sans";
+    color: #787887;
+    margin-top: 40px;
+    margin-left: 36%;
+   
+} 
+
+.content h3 {
+    text-align: center;
+    font-size: 32px;
+    font-family: "Open Sans";
+    color: #ff8a4b;
+    font-weight: 100;
+    line-height:1;
+    margin-top: -4px;
+    margin-left: 36%;
+}
+.p_designation{
+    font-size: 15px !important;
+    margin-top: -5px !important;
+    margin-left: 56%;
+    color: #787887;
+   
+}
+.button{
+    background-color: #787887;
+    color: white;
+    position: absolute;
+    border: 1px;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    border-radius: 30px;
+    padding: 10px 7%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left:56%;
+    margin-top: 2%;
+    margin-bottom: 12%;
+}
+/* .mat-button{
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+} */
+.location{
+    text-align: left;
+    margin-top: 19%;
+    color: #787887;
+    font-family: "Open Sans";
+
+}
+#loc_icon{
+    height: 25px;
+      width: 21px;
+    margin-left: 2%;
+    margin-top: 2%;
+      background: none;
+}
+.para{
+    display: inline-block;
+    padding-left: 13px;
+/*    padding-top: 25px;*/
+    margin-top: 14px;
+    font-size: 17px;
+    position: absolute;
+    font-weight: bold;
+}
+.location .location_info{
+width: 100%;
+}
+#form {
+    border: 1px solid #C3c2c2;
+    width: 353px;
+    font-size: 14px;
+    margin-left: 2%;
+    margin-top: 30px;
+    padding: 0;
+    color: #787887;
+    font-weight: bold;
+    border-radius: 0;
+    font-family: "Open Sans";
+}
+mat-radio-group{
+    width: 100%;
+}
+mat-radio-button{
+    font-family: "Open Sans" !important;
+    width: 100%;
+    color: #787887;
+    padding: 0;
+}
+ 
+.location_info{
+    width: 100%;
+}
+
+#form .radio_grp .radio_btn{
+    margin-bottom: 1px;
+    border-bottom: 1px solid #C3c2c2;
+    background: white;
+    padding: 23px 5px;
+    width: 100%;
+}
+#form .radio_btn:last-child{
+    border-bottom: none !important;
+}
+
+/* span{
+    font-family: "Open sans";
+    margin-left: 19px;
+} */
+.radio_btn .mat-radio-inner-circle{
+    background-color: #ff8a4b !important;
+}
+.radio_btn .mat-radio-outer-circle{
+    border-color: #787887 !important;
+    border-width: 1px;
+}
+.mat-radio-container{
+    margin-left: 7px;
+}
+ .mat-radio-label .mat-radio-outer-circle{
+border-width: 1px;
+}
+.mat-radio-checked {
+    background-color: #f1f1f5 !important;
+}
+
+.mat-radio-container .mat-radio-label-content{
+    font-size: 15px;
+}  
+.cdk-overlay-container .cdk-overlay-pane{
+    top: 71px !important;
+    width: 280px;
+    right: 0 !important;
+}
+
+/* Appointment CSS */
+***********************************/* appointment-header */***************************
+
+/* #searchPatient {
+display: inline-block;
+position: absolute;
+width: 35%;
+background: 1px solid;
+border-radius: 60px;
+height: 45px;
+margin-top: 10px;
+} */
+.add_btn{
+    width: 20%;
+}
+#search-label{
+    padding: 13px 20px;  
+    border-right: 1px solid #dadada;
+    background-color: #f4f4f4;
+    border-bottom-left-radius:23px;
+    border-top-left-radius: 23px;
+    color: #787887;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.head_placeholder {
+    position: absolute !important;
+    width: 384px;
+    padding-left: 10px;
+}
+#searchPatient .input-group-btn{
+    text-align: right;
+    color: #ff8a4b;
+    bottom: 20px;
+}
+
+    ***********************************************/* appointment-form */********************************
+    .main_div .appointment-heading{
+        
+        color: #787887;
+        font-size: 16px;
+        margin-left: 10px;
+        font-weight: bold;
+        padding-top: 10px;
+    } 

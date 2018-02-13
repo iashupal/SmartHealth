@@ -1,0 +1,9 @@
+#searchPatient {
+    display: inline-block;
+    position: relative;
+    width: 35%;
+    border: 1px solid #dadada;
+    border-radius: 60px;
+    height: 44px;
+    margin-top: 12px;
+    }
