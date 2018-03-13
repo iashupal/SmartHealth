@@ -1,0 +1,273 @@
+<app-common-header></app-common-header>
+<div id="flam-container">
+    <div class="row flam-patient">
+
+        <mat-drawer-container class="sidenav-container" exclude="#toggle-menu-button">
+            <mat-drawer position="end" #sidenav class="sidenav aside-box mat-drawer-width" [opened]="opened" [mode]="menuMode" (closedStart)="sidenavIsClosing()" style="max-height:508px">
+                <div class="row card-container-div">
+                    <div class="col-md-12 no-padding">
+                        <mat-card class="example-card no-padding">
+                            <mat-card-content>
+                                <div class="aside-content defaul-padding">
+                                    <div class="dashbord-right">
+                                        <div class="deafalut-1">
+                                            <div class="aside-table-img">
+                                                <img src="{{patientAppointmentProfile.avatarURL}}" alt="" width="50" class="aside-img-circle">
+                                            </div>
+                                            <div class="aside-table-content">
+                                                <h4 class="user-name">{{patientAppointmentProfile.firstName}} {{patientAppointmentProfile.secondName}} {{patientAppointmentProfile.lastName}}
+                                                </h4>
+                                                <p class="user-age">{{patientAppointmentProfile.gender}}, {{patientAppointmentProfile.age}} years</p>
+                                            </div>
+                                        </div>
+                                        <div class="deafalut-1">
+                                            <div class="aside-table-img">
+                                                <img src="assets/images/crown.png" alt="" width="100" class="aside-img-circle">
+                                            </div>
+                                            <div class="aside-table-content">
+                                                <h5 class="user-num">{{patientAppointmentProfile.dialingCode}} {{patientAppointmentProfile.mobileNumber}}</h5>
+                                                <p class="user-email">{{patientAppointmentProfile.emailId}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="deafalut-1 deafalut-uhid">
+                                            <div class="uhid">
+                                                UHID
+                                                <span class="span-hed">
+                                            <strong>{{patientAppointmentProfile.uhid}}</strong>
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dashbord-left">
+                                        <div class="deafult-left check-in">
+                                            <div class="check-def">
+                                                <a (click)="showCheckInBlock()">Check in</a>
+                                            </div>
+                                        </div>
+                                        <div class="deafult-left 2nd consult" [ngClass]="{'start-consult-div': showStartConsult }">
+                                            <div class="check-def">
+                                                <a (click)="showStartConsultBlock()">Start Consult</a>
+                                            </div>
+                                        </div>
+                                        <div class="deafult-left 3rd cancel" [ngClass]="{'cancel-consult-div': showCancelBlock }">
+                                            <div class="check-def">
+                                                <a (click)="showCancelAndRescheduleConsultBlock()">Cancel / Reschedule</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aside-tab defaul-padding">
+                                    <div class="asidetab-C asidetab-C-dr">{{patientAppointmentProfile.doctorName}} </div>
+                                    <div class="asidetab-C asidetab-C-time"><span class="light-text">Time</span> {{patientAppointmentProfile.time}} </div>
+                                    <div class="asidetab-C asidetab-C-minute"><span class="light-text">Duration:</span> {{patientAppointmentProfile.durationMinute}} Minutes
+                                    </div>
+
+                                </div>
+                                <div class="aside-sel-tab defaul-padding " *ngIf="showCheckIn">
+                                    <mat-tab-group class="defaul-padding" disableRipple>
+                                        <mat-tab label="Patient Details">
+                                            <div class="btn-center">
+                                                <button [disableRipple]="true" *ngFor="let patientDetail of patientAppointmentProfile.patientDetails" mat-raised-button class="rounded-btn">{{patientDetail}}</button>
+                                            </div>
+                                        </mat-tab>
+                                        <mat-tab label="Visit History">
+                                            <div class="vistHis">
+                                                <div class="visthis-detals">
+                                                    <div *ngFor="let history of patientAppointmentProfile.viewHistory" class="news-details">
+                                                        <p class="history-details"><span>{{history.date}}, </span><span>{{history.doctorName}}, </span><span>{{history.specialist}}, </span><span>Follow Up </span></p>
+                                                        <p>
+                                                            <a href="{{history.viewPrescriptionId}}" class="view-history"><span><i class="material-icons">event_note</i></span> veiw Priscriptions and notes</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </mat-tab>
+                                    </mat-tab-group>
+                                </div>
+                                <div class="aside-sel-tab " *ngIf="showStartConsult">
+                                    <div class="btn-center defaul-padding">
+                                        <button [disableRipple]="true" mat-raised-button class="rounded-btn">New Consult</button>
+                                        <button [disableRipple]="true" mat-raised-button class="rounded-btn">Creat Recent Consult</button>
+                                    </div>
+                                </div>
+                                <div class="aside-sel-tab defaul-padding" *ngIf="showCancelBlock">
+                                    <div class="btn-center  defaltvertical">
+                                        <div class="RsApp">
+                                            <h2>Reschedule Appointment</h2>
+                                        </div>
+                                        <div class="reschedule-box">
+                                            <div class="reschedule-form">
+                                                <mat-select placeholder="Date">
+                                                    <mat-option value="option">India+91</mat-option>
+                                                    <mat-option value="option">UAE+97</mat-option>
+                                                </mat-select>
+                                            </div>
+                                            <div class="reschedule-form">
+                                                <mat-select placeholder="Time">
+                                                    <mat-option value="option">10 AM</mat-option>
+                                                    <mat-option value="option">10.30 AM</mat-option>
+                                                </mat-select>
+                                            </div>
+                                            <div class="reschedule-form">
+                                                <mat-select placeholder="Doctor">
+                                                    <mat-option value="option">Dr. Gaurav</mat-option>
+                                                    <mat-option value="option">Dr. Rahul</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                        <div class="RsApp-Btn">
+                                            <button [disableRipple]="true" mat-raised-button class="rounded-btn confirm-button">Confirm</button>
+                                            <button [disableRipple]="true" mat-raised-button class="rounded-btn cancel-button">Cancel</button>
+                                        </div>
+                                        <div class="RsApp-btm-Btn">
+                                            <button [disableRipple]="true" mat-raised-button class="rounded-btn" style="background:#ff8a4c;color:#fff">Cancel Appointment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-drawer>
+            <mat-drawer-content [ngClass]="{
+        'drawer-content': menuMode == 'side',
+        'drawer-content-tablet': menuMode == 'over'
+      }">
+                <div class="dashboard-content">
+
+                    <div class="row dashboard-content-inner">
+
+                        <div class="col-md-12 col-xs-12">
+                            <div class="row calendar-header">
+                                <div (click)="onAppointmentStatusChange(dashboardConstant.ALL)" [ngClass]="{'div1-active': (selectedHeaderItem == dashboardConstant.ALL)}" class="col div1 defalut-flex">
+                                    <p>
+                                        <a>ALL</a>
+                                    </p>
+                                    <p class="float-right">{{appointmentStatusCount.all}}</p>
+                                </div>
+                                <div (click)="onAppointmentStatusChange(dashboardConstant.APPOINTMENT)" [ngClass]="{'div2-active': (selectedHeaderItem == dashboardConstant.APPOINTMENT)}" class="col div2 defalut-flex">
+                                    <p>
+                                        <a>APPOINTMENT</a>
+                                    </p>
+                                    <p class="float-right">{{appointmentStatusCount.appointment}}</p>
+                                </div>
+                                <div (click)="onAppointmentStatusChange(dashboardConstant.CHECKED_IN)" [ngClass]="{'div3-active': (selectedHeaderItem == dashboardConstant.CHECKED_IN)}" class="col div3 defalut-flex">
+                                    <p>
+                                        <a>CHECKED-IN</a>
+                                    </p>
+                                    <p class="float-right">{{appointmentStatusCount.checkedIn}}</p>
+                                </div>
+                                <div (click)="onAppointmentStatusChange(dashboardConstant.CANCELLED)" [ngClass]="{'div4-active': (selectedHeaderItem == dashboardConstant.CANCELLED)}" class="col div4 defalut-flex">
+                                    <p>
+                                        <a>CANCELLED</a>
+                                    </p>
+                                    <p class="float-right">{{appointmentStatusCount.cancelled}}</p>
+                                </div>
+                                <div (click)="onAppointmentStatusChange(dashboardConstant.COMPLETED)" [ngClass]="{'div5-active': (selectedHeaderItem == dashboardConstant.COMPLETED)}" class="col div5 defalut-flex">
+                                    <p>
+                                        <a>COMPLETED</a>
+                                    </p>
+                                    <p class="float-right">{{appointmentStatusCount.completed}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <calendar-header-component [(view)]="view" [(viewDate)]="viewDate" (viewChange)="viewChange($event)" (viewDateChange)="viewDateChange($event)">
+                            </calendar-header-component>
+
+                            <div [ngSwitch]="view" class="calendar-views">
+
+                                <mwl-calendar-month-view *ngSwitchCase="dashboardConstant.MONTH" [viewDate]="viewDate" [events]="displayEvents" [cellTemplate]="customMonthViewCellTemplate" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+                                </mwl-calendar-month-view>
+
+                                <mwl-calendar-week-view *ngSwitchCase="dashboardConstant.WEEK" [viewDate]="viewDate" [events]="displayEvents" [weekStartsOn]="1" [eventTemplate]="weekEventTemplate" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)"
+                                    (dayHeaderClicked)="onDayHeaderClickInWeekView($event)">
+
+                                </mwl-calendar-week-view>
+
+                                <mwl-calendar-day-view [eventWidth]="175" *ngSwitchCase="dashboardConstant.DAY" [viewDate]="viewDate" [events]="displayEvents" [dayStartHour]="10" [dayEndHour]="21" [eventTitleTemplate]="dayEventTitleTemplate" (eventClicked)="handleEvent('Clicked', $event.event)"
+                                    (eventTimesChanged)="eventTimesChanged($event)">
+
+                                </mwl-calendar-day-view>
+                            </div>
+
+
+                            <!-- Month View cell custom template -->
+                            <ng-template #customMonthViewCellTemplate let-day="day" let-locale="locale" let-eventClicked="eventClicked">
+                                <div class="cal-cell-top">
+                                    <!-- <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span> -->
+                                    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+                                </div>
+                                <div>
+                                    <small *ngFor="let event of day.events; let i = index">
+                                        <ul  *ngIf="i == 0 || i == 1" class="pat-menu">
+                                            <li>
+                                                <a class="mappoinment" (click)="eventClicked.emit({event: event})">
+                                                    <span class="app-date"> {{event.appointmentDate | date: 'h:mm a' }} </span> 
+                                                    <span class="pat-name"> {{ event.patientName }}</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                
+                            </small>
+                                    <a class="more" *ngIf="day.events.length > 2">
+                                {{day.events.length - 2}} more
+                            </a>
+                                </div>
+                            </ng-template>
+
+
+                            <!-- Day view event custom template -->
+                            <!-- <ng-template #customDayViewEventTemplate let-dayEvent="dayEvent" let-eventClicked="eventClicked">
+                        <div>
+                            <a [ngClass]="{'first': (dayEvent.event.appointmentStatus == 'APPOINTMENT'), 'second': (dayEvent.event.appointmentStatus == 'CHECKED-IN'), 'third': dayEvent.event.appointmentStatus == 'CANCELLED', 'fourth': dayEvent.event.appointmentStatus == 'COMPLETED'}"
+                                (click)="eventClicked.emit({event: dayEvent.event})">
+                                {{dayEvent.event.start | date: 'h:mm' }}, {{dayEvent.event.patientName }}, {{dayEvent.event.gender }}, {{dayEvent.event.age
+                                }}, {{dayEvent.event.patientStatus }}
+                            </a>
+                        </div>
+                    </ng-template> -->
+
+                            <!-- Day view event template -->
+                            <ng-template #dayEventTitleTemplate let-event="event" let-eventClicked="eventClicked">
+                                <div>
+                                    <span [ngClass]="{'first': (event.appointmentStatus == dashboardConstant.APPOINTMENT), 'second': (event.appointmentStatus == dashboardConstant.CHECKED_IN), 'third': event.appointmentStatus == dashboardConstant.CANCELLED, 'fourth': event.appointmentStatus == dashboardConstant.COMPLETED}">
+                                {{event.appointmentDate | date: 'h:mm' }}, {{event.patientName }}, {{event.gender }}, {{event.age
+                                }}, {{event.patientStatus }}
+                            </span>
+                                </div>
+                            </ng-template>
+
+
+                            <!-- Week view event custom template -->
+                            <!-- <ng-template #customWeekViewEventTemplate let-weekEvent="weekEvent">
+                        <a (click)="loadPatientInfo(weekEvent.event.id)">
+                            {{weekEvent.event.start | date: 'h:mm' }}
+                        </a>
+                    </ng-template> -->
+
+                            <!-- Week view event template -->
+                            <ng-template #weekEventTemplate let-weekEvent="weekEvent" let-eventClicked="eventClicked">
+                                <a (click)="eventClicked.emit({event: event})" [ngClass]="{'first': (weekEvent.event.appointmentStatus == dashboardConstant.APPOINTMENT), 'second': (weekEvent.event.appointmentStatus == dashboardConstant.CHECKED_IN), 'third': weekEvent.event.appointmentStatus == dashboardConstant.CANCELLED, 'fourth': weekEvent.event.appointmentStatus == dashboardConstant.COMPLETED}">
+                                    <!-- {{weekEvent.event.appointmentDate | date: 'h:mm' }} -->
+
+                                    <span [ngClass]="{'first': (weekEvent.event.appointmentStatus == dashboardConstant.APPOINTMENT), 'second': (weekEvent.event.appointmentStatus == dashboardConstant.CHECKED_IN), 'third': weekEvent.event.appointmentStatus == dashboardConstant.CANCELLED, 'fourth': weekEvent.event.appointmentStatus == dashboardConstant.COMPLETED}">
+                                {{weekEvent.event.appointmentDate | date: 'h:mm' }}, {{weekEvent.event.patientName }}, {{weekEvent.event.gender }}, {{weekEvent.event.age
+                                }}, {{weekEvent.event.patientStatus }}
+                            </span>
+                                </a>
+                            </ng-template>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+
+    </div>
+</div>

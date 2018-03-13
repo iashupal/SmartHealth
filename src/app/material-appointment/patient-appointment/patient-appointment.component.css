@@ -1,0 +1,13 @@
+::ng-deep .mat-tab-body-wrapper {
+    min-height: 78vh !important;
+    max-height: 100vh !important;
+}
+
+::ng-deep .mat-tab-header {
+    border-bottom: none
+}
+
+::ng-deep .mat-tab-label {
+    background: white;
+    border: 1px solid #ccc;
+}

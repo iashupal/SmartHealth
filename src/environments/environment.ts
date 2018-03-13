@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL: 'http://flamingo.smarthealth.ai/assets/'
 };
+
+export const SERVER_BASE_URL = 'http://staging.smarthealth.ai/';
+export const SERVER_API_URL = 'http://staging.smarthealth.ai/v1/';
+export const CRYPTO_KEY = 'sample_valkyrie_ui_key';

@@ -1,0 +1,45 @@
+<div class="row text-center c-header">
+    <div class="col-2 deafulbtn">
+        <div class="">
+            <div class="" mwlCalendarToday [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)">
+                Today
+            </div>
+        </div>
+    </div>
+    <div class="col-1 deafulbtn">
+        <div class="">
+            <div class="" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)">
+                <mat-icon style="color: #787887;">keyboard_arrow_left</mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="col-1 deafulbtn">
+        <div class="">
+            <div class="" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)">
+                <mat-icon style="color: #787887;">keyboard_arrow_right</mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="col-5 deafulbtn">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>
+    </div>
+
+    <div class="col-1 deafulbtn" [ngClass]="{ 'deafulbtn-active': (view == dashboardConstant.DAY) }">
+        <div class="" (click)="viewChange.emit(dashboardConstant.DAY)">
+            Day
+        </div>
+    </div>
+
+    <div class="col-1 deafulbtn" [ngClass]="{'deafulbtn-active': (view == dashboardConstant.WEEK) }">
+        <div class="" (click)="viewChange.emit(dashboardConstant.WEEK)">
+            Week
+        </div>
+
+    </div>
+    <div class="col-1 deafulbtn" [ngClass]="{'deafulbtn-active': (view == dashboardConstant.MONTH) }">
+        <div class="" (click)="viewChange.emit(dashboardConstant.MONTH)">
+            Month
+        </div>
+    </div>
+
+</div>

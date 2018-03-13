@@ -1,0 +1,41 @@
+[{
+        "id": 1234,
+        "firstName": "H1",
+        "gender": "Male",
+        "age": 32,
+        "mobileNumber": 9874563211,
+        "patientStatus": "New"
+    },
+    {
+        "id": 1234,
+        "firstName": "H1",
+        "gender": "Male",
+        "age": 32,
+        "mobileNumber": 9874563211,
+        "patientStatus": "Existing"
+    },
+    {
+        "id": 1234,
+        "firstName": "H1",
+        "gender": "Male",
+        "age": 32,
+        "mobileNumber": 9874563211,
+        "patientStatus": "Existing"
+    },
+    {
+        "id": 1234,
+        "firstName": "H1",
+        "gender": "Male",
+        "age": 32,
+        "mobileNumber": 9874563211,
+        "patientStatus": "Existing"
+    },
+    {
+        "id": 1234,
+        "firstName": "H1",
+        "gender": "Male",
+        "age": 32,
+        "mobileNumber": 9874563211,
+        "patientStatus": "New"
+    }
+]

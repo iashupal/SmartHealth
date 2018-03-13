@@ -1,0 +1,179 @@
+<!-- <div class="row  app_header">
+    <mat-toolbar class="navigation">
+        <div class="col-md-9">
+            <div class="row row-fluid">
+                <div class="col-md-1 logo-img">
+                    <button mat-button class="left_menu" [disableRipple]="true" routerLink="dashboard">
+                        <mat-icon style="color: #f4f4f4;">home</mat-icon>
+                    </button>
+                </div>
+
+                <div class="col-md-10 hearder-serach-bar">
+                    <div class="input-group serach-flex">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default border-rd-l ">
+                                <span id="search_concept">Search Patient by</span>
+                            </button>
+
+                        </div>
+                        <div class="input-inline">
+                            <input type="text" class="form-control border-rd-r" name="x" placeholder="Search term...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-def-search" type="button"><mat-icon style="color: #ff8a4c;">search</mat-icon></button>
+                            </span>
+                        </div>
+
+                        <span class="input-group-btn">
+                            <button [disableRipple]="true" routerLink="appointment/{{appointmenConstant.NEW_PATIENT_TAB}}" mat-button class="add_new float-right  ">Add New Patient</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button [disableRipple]="true" routerLink="appointment/{{appointmenConstant.EXISTING_PATIENT_TAB}}" mat-button class="add_new float-right ">Add Walking Consult</button>
+                        </span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <span class="fill-remaining-space"></span>
+        <img src="assets/images/rahul.jpg" alt="" width="50" class="aside-img-circle">
+        <p class="dr_name"><span>&nbsp;&nbsp; </span> Dr Kumar Gaurav</p>
+        <button [disableRipple]="true" mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon style="color: #ff8a4c;">arrow_drop_down</mat-icon>
+                </button>
+        <mat-menu #menu="matMenu">
+            <button [disableRipple]="true" mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Profile</span>
+                  </button>
+            <button [disableRipple]="true" mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voicemail</span>
+                  </button>
+            <button [disableRipple]="true" mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+        </mat-menu>
+
+
+
+
+        <button [disableRipple]="true" mat-button class="right_menu">
+              <mat-icon style="color: #ccc;" >menu</mat-icon>
+          </button>
+
+
+
+    </mat-toolbar>
+</div> -->
+
+<header id="flam-branch-header">
+    <div class="flam-contain clearfix">
+        <div id="flam-logo">
+            <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
+        </div>
+        <!-- search-header -->
+        <div id="flam-searchPatient">
+            <label for="" id="flam-search-label">Search Patient by</label>
+            <div class="flam-head_placeholder flam-input-group">
+                <input type="text" name="s-patient" class="flam-head_input" placeholder="Name / Mobile / ID / Status" required>
+            </div>
+            <div class="flam-input-group-btn right">
+                <i class="material-icons">search</i>
+            </div>
+
+        </div>
+        <!-- finish search-header -->
+        <div class="flam-add-btn">
+            <button class="flam-btn_patient"><a data-toggle="tab" routerLink="/material-appointment/{{appointmenConstant.NEW_PATIENT_TAB}}">Add New Patient</a></button>
+        </div>
+        <div class="flam-add-btn">
+            <button class="flam-btn_patient"><a data-toggle="tab" routerLink="/material-appointment/{{appointmenConstant.EXISTING_PATIENT_TAB}}">Add Walk-in Consult</a></button>
+        </div>
+        <!-- right header -->
+        <div class="flam-head_name right">
+            <div class="flam-dr-nm-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/4.jpg" alt="Images" class="flam-dr-img">
+                    <span class="flam-dr-name">Dr. Terhan Tripathi</span>
+                    <span>
+                    <i class="material-icons flam-icon1">arrow_drop_down</i>
+                  </span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/profile-icon.png" alt="profile">
+                            <span class="flam-menu-span">PROFILE</span>
+                            <button class="flam-edit-menu right" type="submit">EDIT</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/view-icon.png" alt="View">
+                            <span class="flam-menu-span">VIEW REPORT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/setting-icon.png" alt="Setting">
+                            <span class="flam-menu-span">SETTING</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/help.png" alt="Help">
+                            <span class="flam-menu-span">HELP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/logout-icon.png" alt="Logout">
+                            <span class="flam-menu-span">LOGOUT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flam-text right">
+                            <img class="flam-menu-image flam-fortis-logo" src="assets/images/hospital-icon.png" alt="Image">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flam-menu-btn-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="flam-menu-btn-icon">
+                    <i class="material-icons flam-icon2">menu</i>
+                  </span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Tutorials</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">FAQ's</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">News</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

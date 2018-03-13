@@ -1,0 +1,107 @@
+<h2 class="hdg">family History </h2>
+
+<form class="flam-fh">
+    <div class="flam-family-div">
+      <div class="flam-family-heading">
+        <h4 class="flam-fam-h4">Diabeties</h4>
+      </div>
+      <mat-radio-group>
+       <mat-radio-button value="Yes" class="flam-social-btn">Yes</mat-radio-button>
+       <mat-radio-button value="No" class="flam-social-btn">No</mat-radio-button>
+      </mat-radio-group>
+      <!-- <input type="text" placeholder="Additional Detail"> -->
+      <mat-form-field class="flam-ct-fld flam-in-fld">
+        <input type="text" matInput placeholder="Additional Detail" [matAutocomplete]="auto1">
+    </mat-form-field>
+    <mat-autocomplete #auto1="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+    </div>
+
+  <div class="flam-family-div">
+        <div class="flam-family-heading">
+            <h4 class="flam-fam-h4">Hypertension</h4>
+        </div>
+       <mat-radio-group>
+           <mat-radio-button value="Yes" class="flam-social-btn">Yes</mat-radio-button>
+           <mat-radio-button value="No" class="flam-social-btn">No</mat-radio-button>
+       </mat-radio-group>
+       <!-- <input type="text" placeholder="Additional Detail"> -->
+       <mat-form-field class="flam-ct-fld flam-in-fld">
+        <input type="text" matInput placeholder="Additional Detail" [matAutocomplete]="auto1">
+    </mat-form-field>
+    <mat-autocomplete #auto1="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+    </div>
+
+    <div class="flam-family-div">
+            <div class="flam-family-heading">
+                <h4 class="flam-fam-h4">Thyroid Disease</h4>
+            </div>
+           <mat-radio-group>
+               <mat-radio-button value="Yes" class="flam-social-btn">Yes</mat-radio-button>
+               <mat-radio-button value="No" class="flam-social-btn">No</mat-radio-button>
+           </mat-radio-group>
+           <!-- <input type="text" placeholder="Additional Detail"> -->
+           <mat-form-field class="flam-ct-fld flam-in-fld">
+            <input type="text" matInput placeholder="Additional Detail" [matAutocomplete]="auto1">
+        </mat-form-field>
+        <mat-autocomplete #auto1="matAutocomplete">
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
+        </div>
+
+        <div class="flam-family-div">
+                <div class="flam-family-heading">
+                    <h4 class="flam-fam-h4">Heart Disease</h4>
+                </div>
+               <mat-radio-group>
+                   <mat-radio-button value="Yes" class="flam-social-btn">Yes</mat-radio-button>
+                   <mat-radio-button value="No" class="flam-social-btn">No</mat-radio-button>
+               </mat-radio-group>
+               <!-- <input type="text" placeholder="Additional Detail"> -->
+               <mat-form-field class="flam-ct-fld flam-in-fld">
+                <input type="text" matInput placeholder="Additional Detail" [matAutocomplete]="auto1">
+            </mat-form-field>
+            <mat-autocomplete #auto1="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+
+        <div class="flam-family-div">
+                    <div class="flam-family-heading">
+                        <h4 class="flam-fam-h4">Cancer</h4>
+                    </div>
+                   <mat-radio-group>
+                       <mat-radio-button value="Yes" class="flam-social-btn">Yes</mat-radio-button>
+                       <mat-radio-button value="No" class="flam-social-btn">No</mat-radio-button>
+                   </mat-radio-group>
+                   <!-- <input type="text" placeholder="Additional Detail"> -->
+                   <mat-form-field class="flam-ct-fld flam-in-fld">
+                    <input type="text" matInput placeholder="Additional Detail" [matAutocomplete]="auto1">
+                </mat-form-field>
+                <mat-autocomplete #auto1="matAutocomplete">
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+         </div>
+</form>
+
+<div class="btn-div">
+        <div class="btn1">
+            <button type="button">Save</button>
+        </div>
+        <div class="btn2">
+            <button type="button">Verify</button>
+        </div>
+    </div>

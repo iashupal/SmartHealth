@@ -1,0 +1,525 @@
+<header id="flam-branch-header">
+    <div class="flam-contain clearfix">
+        <div id="flam-logo">
+            <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
+        </div>
+        <!-- search-header -->
+        <div id="flam-searchPatient">
+            <label for="" id="flam-search-label">Search Patient by</label>
+            <div class="flam-head_placeholder flam-input-group">
+                <input type="text" name="s-patient" class="flam-head_input" placeholder="Name / Mobile / ID / Status" required>
+            </div>
+            <div class="flam-input-group-btn right">
+                <i class="material-icons">search</i>
+            </div>
+
+        </div>
+        <!-- finish search-header -->
+        <!-- <div class="flam-add-btn">
+                  <button class="flam-btn_patient"><a data-toggle="tab" href="#flam-new-patient">Add New Patient</a></button>
+                </div>
+                <div class="flam-add-btn">
+                  <button class="flam-btn_patient"><a data-toggle="tab" href="#flam-existing-patient">Add Walk-in Consult</a></button>
+                </div> -->
+        <!-- right header -->
+        <div class="flam-head_name right">
+            <div class="flam-dr-nm-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/4.jpg" alt="Images" class="flam-dr-img">
+                    <span class="flam-dr-name">Dr. Terhan Tripathi</span>
+                    <span>
+                        <i class="material-icons flam-icon1">arrow_drop_down</i>
+                    </span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/profile-icon.png" alt="profile">
+                            <span class="flam-menu-span">PROFILE</span>
+                            <button class="flam-edit-menu right" type="submit">EDIT</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/view-icon.png" alt="View">
+                            <span class="flam-menu-span">VIEW REPORT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/setting-icon.png" alt="Setting">
+                            <span class="flam-menu-span">SETTING</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/help.png" alt="Help">
+                            <span class="flam-menu-span">HELP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/logout-icon.png" alt="Logout">
+                            <span class="flam-menu-span">LOGOUT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flam-text right">
+                            <img class="flam-menu-image flam-fortis-logo" src="assets/images/hospital-icon.png" alt="Image">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flam-menu-btn-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="flam-menu-btn-icon">
+                        <i class="material-icons flam-icon2">menu</i>
+                    </span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Tutorials</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">FAQ's</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">News</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header finish -->
+
+<div class="left-pane" cmenuHover>
+    <ul class="list-unstyled lt-mn">
+        <li>
+            <a>
+                <i class="sprite ico-1"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-2"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-3"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-4"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-5"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-6"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-7"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-8"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-9"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite ico-10"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a>
+                <i class="sprite ico-11"></i>
+            </a>
+        </li> -->
+    </ul>
+    <div class="left-menu-items" [style.display]="'none'">
+        <ul class="list-unstyled">
+            <li>
+                <a [routerLink]="['vital']" routerLinkActive="active">Vitals</a>
+            </li>
+            <li>
+                <a [routerLink]="['current-treatment']" routerLinkActive="active">Current Treatment and Medication</a>
+            </li>
+            <li>
+                <a [routerLink]="['history']" routerLinkActive="active">History</a>
+            </li>
+            <li>
+                <a [routerLink]="['p-complaint']" routerLinkActive="active">Presenting Complaint</a>
+            </li>
+            <li>
+                <a [routerLink]="['gen-examination']" routerLinkActive="active">General Examination</a>
+            </li>
+            <li>
+                <a [routerLink]="['investigation']" routerLinkActive="active">Investigations</a>
+            </li>
+            <li>
+                <a>Summary of Observations & Investigations</a>
+            </li>
+            <li>
+                <a>Diagnosis</a>
+            </li>
+            <li>
+                <a [routerLink]="['treatment-plan']" routerLinkActive="active">Treatment Plan</a>
+            </li>
+            <li>
+                <a [routerLink]="['cross-ref']" routerLinkActive="active">Cross Referral</a>
+            </li>
+            <!-- <li>
+                <a>Follow Up</a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+<div class="detail-div-lt detail-tp-wid">
+ 
+    <router-outlet></router-outlet>
+
+</div>
+<div class="flam-detail-div-rt">
+    <div class="flam-detail-div-rt-inner">
+        <div class="flam-div1">
+            <div class="flam-user-img">
+                <img src="assets/images/3.jpg">
+            </div>
+            <div class="flam-user-brief">
+                <h4 class="flam-user-name">Vandita Miranda</h4>
+                <span class="flam-user-age">Female , 34 years</span>
+                <h6 class="flam-user-num">+ 91 9810 543188</h6>
+                <h6 class="flam-user-email">vandita.miranda@gmail.com</h6>
+
+                <h5>UHID
+                    <span>URAM02345678</span>
+                </h5>
+            </div>
+            <div class="flam-pt-cat">
+                <img src="assets/images/king.png">
+            </div>
+        </div>
+        <div class="flam-div2">
+            <ul class="list-inline">
+                <li>
+                    <span>Dr. Bharat Kukreti</span>
+                </li>
+                <li>Time
+                    <span>10:15 PM</span>
+                </li>
+                <li>Duration
+                    <span>30 Minutes</span>
+                </li>
+            </ul>
+        </div>
+        <div class="flam-div3">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a data-toggle="tab" href="#flam-patientdetails">Patient Details</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#flam-history">Visit History</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="flam-patientdetails" class="tab-pane fade in active">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a data-toggle="pill" href="#flam-vital">Vitals</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="#flam-allergies">Allergies</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="#flam-socialhistory">Social History</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="#flam-medcond">Medical Conditions</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="#flam-curmed">Current Medications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="pill" href="#flam-gynaehistory">Gynae History</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content flam-pill-tab-content">
+                        <div id="flam-vital" class="tab-pane fade in active">
+                            <div class="flam-div1a">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6>Height</h6>
+                                        <h3>5’5”
+                                            <span>165cm</span>
+                                        </h3>
+                                    </li>
+                                    <li>
+                                        <h6>Weight</h6>
+                                        <h3>58kg</h3>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flam-div1a flam-div1b">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6>BMI</h6>
+                                        <h3>29.5</h3>
+                                    </li>
+                                    <li>
+                                        <h6>Last 3 Visit Trend</h6>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <h6>22.09.2017</h6>
+                                                <h3>24.5</h3>
+                                            </li>
+                                            <li>
+                                                <h6>18.06.2017</h6>
+                                                <h3>27.5</h3>
+                                            </li>
+                                            <li>
+                                                <h6>04.09.2016</h6>
+                                                <h3>21.5</h3>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flam-div1a flam-div1c">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6>Blood Pressure</h6>
+                                        <h3>135 / 80</h3>
+                                    </li>
+                                    <li>
+                                        <h6>Last 3 BP Trend</h6>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <h6>22.09.2017</h6>
+                                                <h3>125 / 70</h3>
+                                            </li>
+                                            <li>
+                                                <h6>18.06.2017</h6>
+                                                <h3>115 / 80</h3>
+                                            </li>
+                                            <li>
+                                                <h6>04.09.2016</h6>
+                                                <h3>90 / 80</h3>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flam-div1a flam-div1c">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6>Blood Pressure</h6>
+                                        <h3>135 / 80</h3>
+                                    </li>
+                                    <li>
+                                        <h6>Last 3 BP Trend</h6>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <h6>22.09.2017</h6>
+                                                <h3>125 / 70</h3>
+                                            </li>
+                                            <li>
+                                                <h6>18.06.2017</h6>
+                                                <h3>115 / 80</h3>
+                                            </li>
+                                            <li>
+                                                <h6>04.09.2016</h6>
+                                                <h3>90 / 80</h3>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flam-div1a flam-div1c">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6>Blood Pressure</h6>
+                                        <h3>135 / 80</h3>
+                                    </li>
+                                    <li>
+                                        <h6>Last 3 BP Trend</h6>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <h6>22.09.2017</h6>
+                                                <h3>125 / 70</h3>
+                                            </li>
+                                            <li>
+                                                <h6>18.06.2017</h6>
+                                                <h3>115 / 80</h3>
+                                            </li>
+                                            <li>
+                                                <h6>04.09.2016</h6>
+                                                <h3>90 / 80</h3>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="flam-allergies" class="tab-pane fade">
+                            <h3>Allergies</h3>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Penicillin and related antibiotics
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="flam-socialhistory" class="tab-pane fade">
+                            <h3>Social History</h3>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Smoker
+                                    <span>Ex-Smoker</span>
+                                </li>
+                                <li>
+                                    Chewing tobacco
+                                    <span>Yes</span>
+                                </li>
+                                <li>
+                                    Alcohol Consumption
+                                    <span>Social Drinker</span>
+                                </li>
+                                <li>
+                                    Exercise
+                                    <span>Exercises Occasionally</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="flam-medcond" class="tab-pane fade">
+                            <h3>Medical Conditions</h3>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Hypertension</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry.
+                                </li>
+                                <li>
+                                    <h5>Diabetes</h5>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="flam-curmed" class="tab-pane fade">
+                            <h3>Current Medications</h3>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Clonidine 200mg
+                                    <span>2 months</span>
+                                </li>
+                                <li>
+                                    Dolo 500mg
+                                    <span>1 year</span>
+                                </li>
+                                <li>
+                                    Dolo 500mg
+                                    <span>1 year</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="flam-gynaehistory" class="tab-pane fade">
+                            <h3>Gynae History</h3>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Currently Pregnant
+                                    <span>Yes</span>
+                                </li>
+                                <li>
+                                    Menstrual Cycle
+                                    <span>Regular</span>
+                                </li>
+                                <li>
+                                    No. of Children
+                                    <span>1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="flam-history" class="tab-pane fade">
+                    <h3>Visit History</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

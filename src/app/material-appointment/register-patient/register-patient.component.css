@@ -1,0 +1,88 @@
+.rounded-btn {
+    border-radius: 50px;
+    background: #f4f4f4;
+}
+
+.fixed-bootstrap-row-margin {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.margin-default {
+    margin-top: 30px;
+}
+
+.marginR20 {
+    margin-right: 20px;
+}
+
+/*
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+.btn-hover-defalut:hover {
+    background: #ff8a4c !important;
+    color: #fff !important;
+}
+
+
+*/
+
+
+.flam-btn_patient{
+
+    border: 0px;
+    border-radius: 30px;
+    padding: 10px 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.flam-save-btn {
+    background-color: #787887;
+    color: white;
+    margin-left: 15px;
+}
+.flam-view-btn {
+    background-color: #ebebf0;
+    color: #787887;
+}
+.flam-patient-div {
+    height: 100%;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.flam-tab-content {
+    width: 95%;
+    margin: auto;
+    height: 83%;
+}
+
+.flam-patient-input {
+    width: 85% !important;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+     font-family: 'Open Sans', sans-serif; 
+}
+
+ .flam-heading {
+     color: #787887;
+      font-family: 'Open sans',sans-serif;
+}
+.flam-heading h5{font-weight: 600;}
+::ng-deep mat-tab-header .mat-tab-label {
+    height: 44px !important;
+    padding: 0 45px !important;
+}
+
+::ng-deep mat-tab-header .mat-tab-label-container {
+    margin-left: 1% !important;
+}

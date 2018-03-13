@@ -1,0 +1,24 @@
+<app-common-header></app-common-header>
+<div id="flam-container">
+    <div class="row flam-patient">
+
+        
+            <div class="col-md-12 col-sm-12" style="margin-top:40px;" class="flam-tab-content">
+                <mat-tab-group [selectedIndex]="selectedIndex" disableRipple>
+                    <mat-tab label="New Patient" >
+
+                        <app-register-patient></app-register-patient>
+
+                    </mat-tab>
+
+                    <mat-tab label="Existing Patient">
+
+                        <app-existing-patient></app-existing-patient>
+
+                    </mat-tab>
+
+                </mat-tab-group>
+            
+        </div>
+    </div>
+</div>

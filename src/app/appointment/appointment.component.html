@@ -1,122 +1,533 @@
+<header id="flam-branch-header">
+    <div class="flam-contain clearfix">
+        <div id="flam-logo">
+            <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
+        </div>
+        <!-- search-header -->
+        <div id="flam-searchPatient">
+            <label for="" id="flam-search-label">Search Patient by</label>
+            <div class="flam-head_placeholder flam-input-group">
+                <input type="text" name="s-patient" class="flam-head_input" placeholder="Name / Mobile / ID / Status" required>
+            </div>
+            <div class="flam-input-group-btn right">
+                <i class="material-icons">search</i>
+            </div>
 
-<header id="branch-header">
-  <div class="contain clearfix">
-      <div id="logo">
-          <img src="assets/images/logo-main.jpg" alt="logo">
-       </div>
-        <div id="searchPatient">
-              <label for="" id="search-label">Search Patient by</label>
-              <div class="head_placeholder">
-                  <input type="text" name="s-patient" class="head_input" placeholder="Name/Mobile/ID/Status" required>
-                  <div class="input-group-btn">
-                  <i class="material-icons">search</i>
-                  </div>
+        </div>
+        <!-- finish search-header -->
+        <div class="flam-add-btn">
+            <button class="flam-btn_patient"><a data-toggle="tab" href="#flam-new-patient">Add New Patient</a></button>
+        </div>
+        <div class="flam-add-btn">
+            <button class="flam-btn_patient"><a data-toggle="tab" href="#flam-existing-patient">Add Walk-in Consult</a></button>
+        </div>
+        <!-- right header -->
+        <div class="flam-head_name right">
+            <div class="flam-dr-nm-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/4.jpg" alt="Images" class="flam-dr-img">
+                    <span class="flam-dr-name">Dr. Terhan Tripathi</span>
+                    <span>
+                    <i class="material-icons flam-icon1">arrow_drop_down</i>
+                  </span>
                 </div>
-              </div>
-          
-           <div class="add_btn">
-              <button class="btn_patient">Add New patient</button> 
-           </div>
-           <div class="add_btn">
-              <button class="btn_patient">Add Walk-in Consult</button>
-           </div>
-      <div class="head_name right">
-          <button class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="dropdown">
-              <i class="material-icons icon2">menu</i>
-          </button>
-          <button class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="menu">
-              <i class="material-icons icon1">arrow_drop_down</i></button>
-          <!-- <i class="material-icons icon1">arrow_drop_down</i> -->
-          <p id="dr_name" class="right">Dr. Terhan Tripathi</p>
-          <img class="right" src="assets/images/4.jpg" alt="Images">
-      </div>
-  </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/profile-icon.png" alt="profile">
+                            <span class="flam-menu-span">PROFILE</span>
+                            <button class="flam-edit-menu right" type="submit">EDIT</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/view-icon.png" alt="View">
+                            <span class="flam-menu-span">VIEW REPORT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/setting-icon.png" alt="Setting">
+                            <span class="flam-menu-span">SETTING</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/help.png" alt="Help">
+                            <span class="flam-menu-span">HELP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="flam-menu-img" src="assets/images/logout-icon.png" alt="Logout">
+                            <span class="flam-menu-span">LOGOUT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flam-text right">
+                            <img class="flam-menu-image flam-fortis-logo" src="assets/images/hospital-icon.png" alt="Image">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flam-menu-btn-hdr dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="flam-menu-btn-icon">
+                    <i class="material-icons flam-icon2">menu</i>
+                  </span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">Tutorials</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">FAQ's</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="flam-menu-span">News</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </header>
-<mat-menu #dropdown="matMenu">
-  <button mat-menu-item class="btn-menu">
-      <span class="menu-span">About Us</span>
-  </button>
-  
-  <button mat-menu-item class="btn-menu">
-       <span class="menu-span">Support</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <span class="menu-span">Tutorials</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <span class="menu-span">FAQ's</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-    <span class="menu-span">News</span>
-  </button>
-</mat-menu>
-<mat-menu #menu="matMenu" id="matMenu">
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-img" src="assets/images/profile-icon.png" alt="profile">
-      <span class="menu-span">PROFILE</span>
-      <button class="edit-menu right" type="submit">EDIT</button>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-img" src="assets/images/view-icon.png" alt="View">
-      <span class="menu-span">VIEW REPORT</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-img" src="assets/images/setting-icon.png" alt="Setting">
-      <span class="menu-span">SETTING</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-img" src="assets/images/help.png" alt="Help">
-      <span class="menu-span">HELP</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-img" src="assets/images/logout-icon.png" alt="Logout">
-      <span class="menu-span">LOGOUT</span>
-  </button>
-  <button mat-menu-item class="btn-menu">
-      <img class="menu-image" src="assets/images/hospital-icon.png" alt="Image">
-      
-  </button>        
-</mat-menu>
 
-<!-- form form fix appointment -->
-<div class="content">
-  <form novalidate class="login-form">
-      <div class="contain">
-          <div class="main_div">
-              <h4 class="appointment-heading">FIX APPOINTMENT</h4>
-          </div>
-          <div class="inner_div">
-              <mat-form-field>
-                  <mat-select placeholder="Date">
-                      <mat-option *ngFor="let date of dates"></mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </div>
-              <div class="inner_div">    
-                  <mat-form-field>
-                          <mat-select placeholder="Time">
-                              <mat-option *ngFor="let time of times"></mat-option>
-                          </mat-select>
-                      </mat-form-field>
-          </div>
-          <div class="inner_div">
-                  <mat-form-field>
-                          <mat-select placeholder="Doctor">
-                              <mat-option *ngFor="let doctor of doctors"></mat-option>
-                          </mat-select>
-                      </mat-form-field>
-          </div>
-          <div class="inner_div"> 
-                  <mat-form-field>
-                          <mat-select placeholder="Department">
-                              <mat-option *ngFor="let department of departments"></mat-option>
-                          </mat-select>
-                      </mat-form-field>
-          </div>
-          <div class="inner_div">
-                  <button type="submit" name="button" >Confirm</button>
-                  <button type="submit" name="button" class="">Cancel</button>
-          </div>
-      </div>
-  </form>
+<!--***************************** form new appointment ***********************************-->
+
+
+
+<div id="flam-container">
+    <div class="row flam-patient">
+        <div class="col-sm-12 flam-patient-div">
+            <div id="flam-patient-btn">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a data-toggle="tab" href="#flam-new-patient">New Patient</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#flam-existing-patient">Existing Patient</a>
+                    </li>
+                </ul>
+                <!-- <mat-tab-group>
+            <mat-tab label="New Patient"></mat-tab>
+            <mat-tab label="Existing Patient"></mat-tab>
+          </mat-tab-group> -->
+            </div>
+            <div class="tab-content flam-tab-content">
+                <div id="flam-new-patient" class="tab-pane fade in active">
+                    <form class="flam-details" [formGroup]="options">
+                        <div class="flam-patient-detail">
+                            <div class="flam-heading">
+                                <h5 class="flam-patient-heading">Patient Details</h5>
+                            </div>
+                            <div class="flam-patient-form">
+                                <!-- row 1 -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="fname" class="flam-input-field flam-input" placeholder="First Name" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="sname" class="flam-input-field flam-input" placeholder="Second Name" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="surname" class="flam-input-field flam-input" placeholder="Surname" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="gender" formControlName="gender" class="flam-input-field flam-select" placeholder="Gender">
+                                                    <mat-option value="Male">Male</mat-option>
+                                                    <mat-option value="Female">Female</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                                <!-- <datalist id="gender">
+                            <option value="Male"></option>
+                            <option value="Female"></option>
+                          </datalist> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row 2 -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput [matDatepicker]="picker" name="dob" class="flam-input-field flam-input" placeholder="Date of Birth" required>
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon flam-date-icon" alt="icon"> -->
+                                            </mat-form-field>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="bg" class="flam-input-field flam-input" placeholder="Blood Group" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="phone-no" formControlName="number" class="flam-input-field flam-select" placeholder="India +91" required>
+                                                    <mat-option value="Srilanka">Srilanka</mat-option>
+                                                    <mat-option value="America">America</mat-option>
+                                                    <mat-option value="Australia">Australia</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="m-no" class="flam-input-field flam-input" placeholder="Mobile Number" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- patient-address form -->
+                        <div class="flam-patient-detail">
+                            <div class="flam-heading">
+                                <h5 class="flam-patient-heading flam-address-head">Patient Address</h5>
+                            </div>
+                            <div class="flam-patient-form">
+                                <!-- row 1 -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="address" class="flam-input-field flam-input" placeholder="Address 1" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="pin-code" class="flam-input-field flam-input" placeholder="Pin Code" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="state" formControlName="state" class="flam-input-field flam-select" placeholder="State" required>
+                                                    <mat-option value="New Delhi">New Delhi</mat-option>
+                                                    <mat-option value="Noida">Noida</mat-option>
+                                                    <mat-option value="Gurugram">Gurugram</mat-option>
+                                                    <mat-option value="Dwarka">Dwarka</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="country" formControlName="country" class="flam-input-field flam-select" placeholder="Country" required>
+                                                    <mat-option value="India">India</mat-option>
+                                                    <mat-option value="Europe">Europe</mat-option>
+                                                    <mat-option value="America">America</mat-option>
+                                                    <mat-option value="Australia">Australia</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row 2 -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="occupation" formControlName="occupation" class="flam-input-field flam-select" placeholder="Occupation By" required>
+                                                    <mat-option value="Physician">Physician</mat-option>
+                                                    <mat-option value="Surgerion">Surgerion</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="referred" class="flam-input-field flam-input" placeholder="Referred By" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-select">
+                                            <mat-form-field>
+                                                <mat-select name="govt" formControlName="document" class="flam-input-field flam-select" placeholder="Govt. Issued ID Proof" required>
+                                                    <mat-option value="Aadhar Card">Aadhar Card</mat-option>
+                                                    <mat-option value="Aadhar Card">Aadhar Card</mat-option>
+                                                </mat-select>
+                                                <!-- <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon"> -->
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="flam-patient-input flam-inp">
+                                            <mat-form-field>
+                                                <input matInput name="e-no" class="flam-input-field" placeholder="Emergency Contact Number" required>
+                                                <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flam-inner_div flam-apointment-field">
+                            <button type="button" name="button" class="flam-btn_patient flam-view-btn">View</button>
+                            <button type="button" name="button" class="flam-btn_patient flam-save-btn" data-toggle="modal" data-target="#myModal">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="flam-existing-patient" class="tab-pane fade">
+
+                    <div id="flam-existing-form">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <!-- **************************existing-form******************************-->
+
+                                <form id="flam-info" class="flam-details flam-exist-form-detail">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="flam-existing-input">
+                                                <mat-form-field class="flam-input-field">
+                                                    <input matInput name="p-name" class="flam-input-field" placeholder="Patient Name" required>
+                                                    <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon flam-exist-icon" alt="icon">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="flam-existing-input">
+                                                <mat-form-field class="flam-input-field">
+                                                    <input matInput name="mobile-no" class="flam-input-field" placeholder="Mobile Number" required>
+                                                    <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon flam-exist-icon" alt="icon">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="flam-existing-input flam-inner_div">
+                                                <button type="button" name="button" class="flam-btn_patient flam-select-btn right">Select and Go</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--*********************** finish form ****************************-->
+                        <!-- start table -->
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="row">
+                                    <div class="col-lg-9 col-md-8 col-sm-7">
+
+                                        <div class="flam-existing-patient-table">
+                                            <table class="flam-patient-table-info">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Patient Name</th>
+                                                        <th>Gender</th>
+                                                        <th>Age</th>
+                                                        <th>Contact Number</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Dev Kumar</td>
+                                                        <td>Male</td>
+                                                        <td>32 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Neha Batra</td>
+                                                        <td>Female</td>
+                                                        <td>52 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nishu Jain</td>
+                                                        <td>Male</td>
+                                                        <td>45 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Usha Maini</td>
+                                                        <td>Female</td>
+                                                        <td>63 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Yeshwant Kumar</td>
+                                                        <td>Male</td>
+                                                        <td>37 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Preeti Batra</td>
+                                                        <td>Female</td>
+                                                        <td>69 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mahesh Malhotra</td>
+                                                        <td>Male</td>
+                                                        <td>32 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Preeti Batra</td>
+                                                        <td>Female</td>
+                                                        <td>39 Years</td>
+                                                        <td>+91 88 26 620 621</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- finish table -->
+
+                                    <div class="col-lg-3 col-md-4 col-sm-5">
+                                        <form novalidate class="flam-side-form flam-appointment-form">
+                                            <div class="flam-contain">
+                                                <div class="flam-main_div">
+                                                    <h4 class="flam-appointment-heading">FIX APPOINTMENT</h4>
+                                                </div>
+                                                <div class="flam-inner_div flam-appointment-field">
+                                                    <mat-form-field class="flam-app-field">
+                                                        <mat-select placeholder="Date">
+                                                            <mat-option *ngFor="let date of dates"></mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="flam-inner_div flam-appointment-field">
+                                                    <mat-form-field class="flam-app-field">
+                                                        <mat-select placeholder="Time">
+                                                            <mat-option *ngFor="let time of times"></mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="flam-inner_div flam-appointment-field">
+                                                    <mat-form-field class="flam-app-field">
+                                                        <mat-select placeholder="Doctor">
+                                                            <mat-option *ngFor="let doctor of doctors"></mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="flam-inner_div flam-appointment-field">
+                                                    <mat-form-field class="flam-app-field">
+                                                        <mat-select placeholder="Department">
+                                                            <mat-option *ngFor="let department of departments"></mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="flam-inner_div flam-appointment-field flam-upper-btn clearfix">
+                                                    <button type="submit" name="button" class="flam-btn_patient flam-side-form-btn flam-a-btn">Confirm</button>
+                                                    <button type="submit" name="button" class="flam-btn_patient flam-cancel_btn right flam-a-btn">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- </div> -->
+
+<!-- ******************************appointment-form **************************************** -->
+
+<div class="flam-content flam-appointment-content modal fade" id="myModal" role="dialog">
+    <form novalidate class="flam-appointment-form modal-dialog">
+        <div class="flam-contain">
+            <div class="flam-main_div">
+                <h4 class="flam-appointment-heading">FIX APPOINTMENT</h4>
+            </div>
+            <div class="flam-inner_div flam-appointment-field">
+                <mat-form-field class="flam-app-field">
+                    <mat-select placeholder="Date">
+                        <mat-option *ngFor="let date of dates"></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="flam-inner_div flam-appointment-field">
+                <mat-form-field class="flam-app-field">
+                    <mat-select placeholder="Time">
+                        <mat-option *ngFor="let time of times"></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="flam-inner_div flam-appointment-field">
+                <mat-form-field class="flam-app-field">
+                    <mat-select placeholder="Doctor">
+                        <mat-option *ngFor="let doctor of doctors"></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="flam-inner_div flam-appointment-field">
+                <mat-form-field class="flam-app-field">
+                    <mat-select placeholder="Department">
+                        <mat-option *ngFor="let department of departments"></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="flam-inner_div flam-appointment-field flam-popup-btn">
+                <button type="submit" name="button" class="flam-btn_patient">Confirm</button>
+                <button type="submit" name="button" class="flam-btn_patient flam-cancel_btn right">Cancel</button>
+            </div>
+        </div>
+    </form>
 </div>

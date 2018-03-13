@@ -1,0 +1,12 @@
+<div class="docs-primary-header">
+    <button class="side-nav-toggle" [ngStyle]="{'display': isMenuVisible == true ? 'block' : 'none' }" mat-button="" (click)="toggle()">
+     <span>
+        <mat-icon aria-hidden="true">
+          menu
+        </mat-icon>
+      </span>
+    </button>
+    <h1>
+        {{title}} Dashboard
+    </h1>
+</div>

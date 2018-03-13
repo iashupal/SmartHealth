@@ -1,0 +1,124 @@
+.existing-patient-block {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+ 
+mat-table mat-row:hover {
+    background: #ff8a4c;
+    color: #fff;
+}
+
+mat-row .mat-cell {
+    color: inherit;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.fix-appoinment mat-select {
+    padding-top: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 5px 5px #bdb9b969;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    height: 50px;
+    border: 1px solid #ccc;
+}
+
+.fix-appoinment mat-select:first-child {
+    margin-top: 20px;
+}
+
+.fix-appoinment mat-select:last-child {
+    margin-bottom: 30px;
+}
+
+.mat-form-field-underline {
+    background-color: #e1e1e1;
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 180px;
+    border: 1px solid #e1e1e1;
+    margin-top: 30px;
+}
+
+form .row.fixed-bootstrap-row-margin {
+    margin-top: 30px !important;
+}
+
+.rounded-btn {
+    border-radius: 50px;
+    background: #f4f4f4;
+}
+
+.fixed-bootstrap-row-margin {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+::ng-deep .mat-input-underline .mat-form-field-underline {
+    bottom: 0px !important;
+}
+
+.btn-hover-defalut:hover {
+    background: #ff8a4c !important;
+    color: #fff !important;
+}
+
+.app-form {
+   
+    padding: 20px 40px;
+}
+
+.marginR20 {
+    margin-right: 20px
+}
+
+#flam-existing-form .row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.flam-existing-input .flam-input-field {
+    width: 100%;
+    font-size: 13px;
+}
+
+#flam-existing-form .flam-exist-form-detail .flam-existing-input {
+    width: 90%;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+
+.flam-appointment-field .flam-btn_patient {
+    background-color: #787887;
+    color: white;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 14px;
+    border: none;
+    width: 48%;
+    /* width: 130px; */
+    /* margin-top: 25px; */
+    /* margin-bottom: 30px; */
+}
+
+.flam-appointment-field .flam-cancel_btn {
+    /* margin-left: 20px; */
+    background-color: #ebebf0;
+    color: #787887;
+    /* position: absolute; */
+}

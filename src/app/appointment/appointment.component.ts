@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-appointment',
@@ -6,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appointment.component.css']
 })
 export class AppointmentComponent implements OnInit {
+  options: FormGroup;
 
-  constructor() { }
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      'gender': '',
+      'number': '',
+      state: '',
+      country: '',
+      occupation: '',
+      document: ''
+
+    });
+  }
 
   ngOnInit() {
   }

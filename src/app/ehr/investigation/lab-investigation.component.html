@@ -1,0 +1,57 @@
+<!-- Lab investigation -->
+
+<div id="flam-lab-investigation">
+  <div class="form-pt-det flam-in-contain">
+    <h2 class="hdg">Lab Investigation</h2>
+    <mat-form-field class="flam-in-fld">
+        <mat-chip-list #chipList>
+          <mat-chip class="flam-inv-chip" *ngFor="let pill of pills" [selectable]="selectable"
+                   [removable]="removable" (remove)="remove(pill)">
+            {{pill.name}}
+            <mat-icon class="flam-inv-star">star_border</mat-icon>
+            <mat-icon matChipRemove *ngIf="removable" class="flam-inv-clear">clear</mat-icon>
+          </mat-chip>
+          <input  class="flam-lab-input"
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)" />
+        </mat-chip-list>
+      </mat-form-field>
+    <!-- additional info -->
+    <!-- selected tags div -->
+
+    <!-- <div class="flam-inv-text">
+      <input type="text" placeholder="Type Your Text Here">
+    </div> -->
+
+    <!-- finish selected tags div -->
+
+    <div>
+      <h5 class="flam-inv-heading">Finding from tests</h5>
+    </div>
+    <div class="flam-inv-text">
+      <!-- <input type="text" placeholder="Type Your Text Here"> -->
+      <mat-form-field class="flam-ct-fld flam-in-fld">
+          <input type="text" matInput placeholder="Type Your Text Here" [matAutocomplete]="auto1">
+      </mat-form-field>
+      <mat-autocomplete #auto1="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+              {{option}}
+          </mat-option>
+      </mat-autocomplete>
+    </div>
+    <!-- button -->
+    <div class="btn-div">
+      <div class="btn1">
+        <button type="button">Save</button>
+      </div>
+      <div class="btn2">
+        <button type="button">Verify</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

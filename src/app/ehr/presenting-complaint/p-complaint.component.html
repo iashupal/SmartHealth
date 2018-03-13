@@ -1,0 +1,110 @@
+<h2 class="hdg flam-pc-h2">Presenting Complaint</h2>
+<div class="form-pt-det flam-pc-contain">
+
+        <mat-form-field class="flam-in-fld flam-in-scroll">
+                <mat-chip-list #chipList>
+                        
+                    <mat-chip class="flam-inv-chip" *ngFor="let pill of pills" [selectable]="selectable" [removable]="removable" (remove)="remove(pill)">
+                        {{pill.name}}
+                        <mat-icon class="flam-inv-star">star_border</mat-icon>
+                        <mat-icon matChipRemove *ngIf="removable" class="flam-inv-clear">clear</mat-icon>
+                    </mat-chip>
+                    <input type="text" class="flam-lab-input"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="add($event)" />
+                </mat-chip-list>
+            </mat-form-field>
+
+    <!-- selected tags div -->
+    <!-- <div>
+      <div class="flam-pc-text">
+           
+            <mat-form-field class="flam-in-fld">
+                    <mat-chip-list #chipList1>
+                            
+                        <mat-chip class="flam-inv-chip flam-pc-h4" *ngFor="let select of selects" [selectable]="selectable" [removable]="removable" (remove)="removediv(select)">
+                            {{select.name}}
+                            <mat-icon class="flam-inv-star flam-pc-icon-clr">star_border</mat-icon>
+                            <mat-icon matChipRemove *ngIf="removable" class="flam-inv-clear">clear</mat-icon>
+                        </mat-chip>
+                       
+                    </mat-chip-list>
+                </mat-form-field>
+            
+      </div>
+    </div> -->
+    <!-- finish selected tags div -->
+
+    <!-- additional info -->
+    <div class="flam-pc-ad-in">
+            <i class="material-icons right flam-pc-cancel">cancel</i>
+            <!-- <div class="flam-pc-tags flam-pc-slct-tag">
+                    <i class="material-icons flam-pc-icon flam-pc-star">star_border</i> 
+                    <i class="material-icons flam-pc-cross right">clear</i>       
+                    <h4 class="flam-pc-heading flam-pc-h4-clr">Headache</h4>
+            </div> -->
+            <mat-form-field class="flam-in-fld" placeholder="Type Your Text Here">
+                    <mat-chip-list #chipList2>
+                            
+                        <mat-chip class="flam-inv-chip flam-pc-h4 flam-pc-slct" *ngFor="let add of addition" [selectable]="selectable" [removable]="removable" (remove)="remove(add)">
+                            {{add.name}}
+                            <mat-icon class="flam-inv-star flam-pc-icon-clr">star_border</mat-icon>
+                            <mat-icon matChipRemove *ngIf="removable" class="flam-inv-clear">clear</mat-icon>
+                        </mat-chip>
+                       
+                    </mat-chip-list>
+                </mat-form-field>
+            <div>
+                <h4 class="flam-pc-add-heading">Additional Information</h4>
+            </div>
+            <div class="sgl-div">
+                    <mat-form-field class="flam-fm-fld">
+                            <mat-select placeholder="Since When">
+                                <mat-option value="1 Month">1 Month</mat-option>
+                                <mat-option value="2 Month">2 Month</mat-option>
+                                <mat-option value="3 Month">3 Month</mat-option>
+                                <mat-option value="4 Month">4 Month</mat-option>
+                            </mat-select>
+                            <!-- <span class="flam-arr">
+                            </span> -->
+                    </mat-form-field>
+                    <mat-form-field class="flam-fm-fld">
+                            <mat-select placeholder="Severity">
+                                <mat-option value="High">High</mat-option>
+                                <mat-option value="Medium">Medium</mat-option>
+                                <mat-option value="Low">Low</mat-option>
+                                <mat-option value="Critical">Critical</mat-option>
+                            </mat-select>
+                            <!-- <span class="flam-arr">
+                            </span> -->
+                    </mat-form-field>
+                    <!-- <input type="text" placeholder="Type Your Text Here"> -->
+                    <mat-form-field class="flam-ct-fld flam-in-fld">
+                            <input type="text" matInput placeholder="Treatment / Procedure" [matAutocomplete]="auto2">
+                        </mat-form-field>
+                        <mat-autocomplete #auto2="matAutocomplete">
+                            <mat-option *ngFor="let option of options" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    <button type="button" name="button" class="flam-btn-patient">Save</button> 
+            </div>
+
+
+            <!-- this table show after the save button click -->
+            <div class="flam-pc-table-div">
+                <table class="flam-pc-table">
+                    <tr>
+                        <td>Headache</td>
+                        <td>2 years</td>
+                        <td>Critical</td>
+                        <td>Lorem ipsum dolor sit ammet, consectetur adipiscing elit</td>
+                    </tr>
+                </table>
+                <img class="flam-pc-img" src="assets/images/pencil.png" alt="edit icon">
+            </div> 
+    </div>
+
+</div>

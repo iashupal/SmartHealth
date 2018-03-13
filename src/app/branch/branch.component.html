@@ -1,94 +1,128 @@
-<header id="branch-header">
-    <div class="contain clearfix">
-        <div id="logo">
-            <img src="assets/images/logo-main.jpg" alt="logo">
-             </div>
-        <div class="head_name right">
-            <span class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="dropdown" >
-            <i class="material-icons icon2">menu</i>
-            </span>
-            <span class="menu-btn-icon" mat-icon-button [matMenuTriggerFor]="menu">
-                <i class="material-icons icon1">arrow_drop_down</i></span>
-            
-            <p id="dr_name" class="right">Dr. Terhan Tripathi</p>
-            <img class="right" src="assets/images/4.jpg" alt="Images">
-        </div>
+<header id="flam-branch-header">
+  <div class="flam-contain clearfix">
+    <div id="flam-logo">
+      <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
     </div>
-  </header>
-  <mat-menu #dropdown="matMenu">
-        <button mat-menu-item class="btn-menu">
-            <span class="menu-span">About Us</span>
-        </button>
-        
-        <button mat-menu-item class="btn-menu">
-             <span class="menu-span">Support</span>
-        </button>
-        <button mat-menu-item class="btn-menu">
-            <span class="menu-span">Tutorials</span>
-        </button>
-        <button mat-menu-item class="btn-menu">
-            <span class="menu-span">FAQ's</span>
-        </button>
-        <button mat-menu-item class="btn-menu">
-          <span class="menu-span">News</span>
-        </button>
-    </mat-menu>
-  <mat-menu #menu="matMenu" id="matMenu">
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-img" src="assets/images/profile-icon.png" alt="profile">
-        <span class="menu-span">PROFILE</span>
-        <button class="edit-menu right" type="submit">EDIT</button>
-    </button>
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-img" src="assets/images/view-icon.png" alt="View">
-        <span class="menu-span">VIEW REPORT</span>
-    </button>
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-img" src="assets/images/setting-icon.png" alt="Setting">
-        <span class="menu-span">SETTING</span>
-    </button>
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-img" src="assets/images/help.png" alt="Help">
-        <span class="menu-span">HELP</span>
-    </button>
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-img" src="assets/images/logout-icon.png" alt="Logout">
-        <span class="menu-span">LOGOUT</span>
-    </button>
-    <button mat-menu-item class="btn-menu">
-        <img class="menu-image" src="assets/images/hospital-icon.png" alt="Image">
-        
-    </button>        
-  </mat-menu>
-  
-  <div class="content clearfix">
-    <div class="main-content-inner-div">
-        <div class="doctor_info col-sm-6">
-            <img class="image" src="assets/images/4.jpg" alt="Images">
-            <p class="welcome">Welcome !</p>
-            <h3>Dr. Trehan Tripathi</h3>
-            <p class="p_designation">Senior Surgeon Oncology</p>
-            <button class="button" type="submit">Go</button>
+    <div class="flam-head_name right">
+      <div class="flam-dr-nm-hdr dropdown">
+        <div class="dropdown-toggle" data-toggle="dropdown">
+          <img src="assets/images/4.jpg" alt="Images" class="flam-dr-img">
+          <span class="flam-dr-name">Dr. Terhan Tripathi</span>
+          <span>
+            <i class="material-icons flam-icon1">arrow_drop_down</i>
+          </span>
         </div>
-    </div>
-     <div class="">
-        <div class="col-sm-6 location_detail right">
-            <div class="location">
-                <img id="loc_icon" src="assets/images/loc2.jpg" alt="location">
-                
-                <p class="para">Choose a Location</p>
-                </div>
-                <div class="location_info">
-                    <form name="test" id="form">
-                        <mat-radio-group class="radio_grp" [(ngModel)]="selectVal" [ngModelOptions]="{standalone: true}">
-                            <mat-radio-button class="radio_btn" (click)="changecolor(location)" [ngClass]="{'click': changeMe(location)}" *ngFor="let location of locations"
-                                [value]="location">{{location}}
-                            </mat-radio-button>
-                        </mat-radio-group>
-                    </form>
-                    <!-- <span style="color: #ff8a4b">{{selectVal}}</span> -->
-                </div>
-            
+        <ul class="dropdown-menu">
+          <li>
+            <a>
+              <img class="flam-menu-img" src="assets/images/profile-icon.png" alt="profile">
+              <span class="flam-menu-span">PROFILE</span>
+              <button class="flam-edit-menu right" type="submit">EDIT</button>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img class="flam-menu-img" src="assets/images/view-icon.png" alt="View">
+              <span class="flam-menu-span">VIEW REPORT</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img class="flam-menu-img" src="assets/images/setting-icon.png" alt="Setting">
+              <span class="flam-menu-span">SETTING</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img class="flam-menu-img" src="assets/images/help.png" alt="Help">
+              <span class="flam-menu-span">HELP</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img class="flam-menu-img" src="assets/images/logout-icon.png" alt="Logout">
+              <span class="flam-menu-span">LOGOUT</span>
+            </a>
+          </li>
+          <li>
+            <a class="flam-text right">
+              <img class="flam-menu-image flam-fortis-logo" src="assets/images/hospital-icon.png" alt="Image">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flam-menu-btn-hdr dropdown">
+        <div class="dropdown-toggle" data-toggle="dropdown">
+          <span class="flam-menu-btn-icon">
+            <i class="material-icons flam-icon2">menu</i>
+          </span>
         </div>
+        <ul class="dropdown-menu">
+          <li>
+            <a>
+              <span class="flam-menu-span">About Us</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="flam-menu-span">Support</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="flam-menu-span">Tutorials</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="flam-menu-span">FAQ's</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="flam-menu-span">News</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  
+  </div>
+</header>
+<!-- header finish -->
+
+<!-- branch-content  -->
+<div class="flam-content clearfix">
+  <div class="flam-main-content-inner-div">
+    <div class="flam-doctor_info col-sm-6">
+      <img class="flam-image" src="{{userProfileResponseModel.image}}" alt="Images">
+      <p class="flam-welcome">Welcome !</p>
+      <h3 class="flam-dr-wel">{{userProfileResponseModel.first_name}} {{userProfileResponseModel.last_name}}</h3>
+      <p class="flam-p_designation">{{userProfileResponseModel.specialisation}}</p>
+      <!-- <button class="flam-button" (click)="update_Organisation_Users_logs()">Go</button> -->
+    </div>
+
+    <div class="">
+      <div class="col-sm-6 flam-location_detail right">
+        <div class="flam-location">
+          <img id="flam-loc_icon" src="assets/images/loc2.jpg" alt="location">
+
+          <p class="flam-para">Choose a Location</p>
+        </div>
+        <div class="flam-location_info">
+          <form [formGroup]="branchForm" name="test" id="flam-form">
+            <mat-radio-group formControlName="branchListControl" class="flam-radio_grp" (change)="onBranchSelection($event)">
+              <mat-radio-button class="flam-radio_btn" *ngFor="let branch of userBranchResponseModel.page_results" [value]="branch.id">
+                {{branch.name}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </form>
+          <button class="flam-button" (click)="update_Organisation_Users_logs()">Go</button>
+          <!-- <span style="color: #ff8a4b">{{selectVal}}</span> -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- content finish -->

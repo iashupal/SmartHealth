@@ -1,0 +1,446 @@
+.form-vital .flam-slct-width{
+    width: 30%;
+}
+
+.form-vital .flam-select-inp{
+    margin-top: 30px;
+}
+
+.selct-field .flam-hy-heading .flam-heading-h4
+{
+    color: #787887;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans',sans-serif;
+}
+.flam-select-inp{
+    margin-top: 60px;
+    font-size: 13px;
+}
+.flam-select-inp .flam-social-btn{
+    border: 1px solid #dadada;
+    border-radius: 26px;
+    width: 80px;
+    padding: 10px 22px 4px 12px;
+    color: #787887;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-family: 'Open Sans',sans-serif;
+}
+
+
+/* Responsive code */
+/* 1240px css code */
+
+@media screen and (max-width:1264px){
+    .flam-select-inp .flam-social-btn{
+        width: 74px;
+        padding: 10px 16px 4px 8px;
+    }
+}
+
+/* 1024px css code */
+
+@media screen and (max-width:1199px) and (min-width:1024px){
+    .form-vital .flam-slct-width{
+        width: 35%;
+    }
+    .flam-select-inp .flam-social-btn{
+        width: 70px;
+        padding: 10px 16px 4px 8px;
+    }
+}
+
+/* 1024px css code */
+
+@media screen and (max-width:1023px) and (min-width:992px){
+    .form-vital .flam-slct-width{
+        width: 35%;
+    }
+    .flam-select-inp .flam-social-btn{
+        width: 69px;
+        padding: 10px 16px 4px 4px;
+    }
+}
+
+
+/* Family history css */
+
+.flam-fh{
+    width: 100%;
+    overflow-y: auto;
+    height: 360px;
+    overflow-x: hidden;
+
+}
+.flam-family-div .flam-family-heading{
+    display: inline-block;
+    color: #787887;
+    /* margin-right: 65px; */
+    margin-top: 15px;
+    width: 16%;
+}
+
+.flam-family-div .flam-family-heading .flam-fam-h4{
+    font-size: 13px;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+}
+
+.flam-fh .flam-family-div .flam-social-btn{
+    border: 1px solid #dadada;
+    border-radius: 26px;
+    
+    padding: 10px 22px 4px 12px;
+    color: #787887;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-family: 'Open Sans',sans-serif;
+
+}
+.flam-fh .flam-family-div{
+    display: inline-block;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+.flam-fh .flam-family-div .flam-ct-fld{
+    width: 50%;
+    top: 10px;
+}
+.flam-fh .flam-family-div input{
+    margin-left: 3%;
+   width: 100%;
+    padding: 13px 0px;
+    text-align: center;
+    border-radius: 7px;
+    border: 1px solid #c7c7d1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #787887;
+    letter-spacing: 0.05rem;
+    box-shadow: inset 0 0 9px #dbdbe4;
+}
+
+/* Resconsive code */
+/* 1370px css */
+@media screen and (max-width:1370px){
+    .flam-fh .flam-family-div .flam-social-btn{
+        padding: 8px 14px 2px 8px;
+    }
+    /* .flam-fh .flam-family-div input{
+        width: 45%;
+    } */
+}
+
+/* 1024px css */
+@media screen and (max-width:1199px) and (min-width:1024px){
+/* .flam-family-div .flam-family-heading{
+    width: 110px;
+}
+
+.flam-fh .flam-family-div .flam-social-btn{
+    padding: 8px 12px 2px 6px;
+} */
+/* .flam-fh .flam-family-div input{
+    width: 39%;
+    font-size: 13px;
+} */
+}
+
+/* 992px css */
+@media screen and (max-width:1023px) and (min-width:992px){
+/* .flam-family-div .flam-family-heading{
+    width: 105px;
+}
+.flam-fh .flam-family-div .flam-social-btn{
+    padding: 8px 12px 2px 6px;
+} */
+/* .flam-fh .flam-family-div input{
+    width: 35%;
+    font-size: 13px;
+} */
+}
+
+
+
+/* gyanee css */
+
+/* .flam-gh .flam-gynae-upper{
+    width: 80%;
+} */
+.form-pt-det{
+    margin-top: 0;
+}
+.flam-gh .flam-gynae-div{
+    display: inline-block;
+    width: 25%;
+    margin-right: 5px;
+
+}
+.flam-gh .flam-gyn-heading .flam-gyn-h4{
+    color: #787887;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans',sans-serif;
+}
+.flam-gynae-div .flam-gyn-fld{
+    width: 85%;
+}
+  .flam-gh .flam-gyn-radio{
+    width: 28% !important;
+} 
+.flam-gynae-div .flam-social-btn{
+    border: 1px solid #dadada;
+    border-radius: 26px;
+    /* width: 74px; */
+    width: 40% !important;
+    padding: 10px 16px 4px 6px;
+    color: #787887;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-family: 'Open Sans',sans-serif
+}
+ .flam-gh .flam-gyn-wid{
+    margin-top: 2%;
+}
+.flam-gh .flam-gyn-inner{
+    width: 75%;
+    margin-top: 3%;
+    border: 1px solid #ffeadf;
+    background-color: #ffeadf;
+    padding: 25px 15px 0 15px;
+}
+
+.flam-gh .flam-gyn-inner .flam-fm-fld{
+ width: 18%;
+ margin-right: 20px;
+}
+.flam-gyn-inner .flam-sgl-div{
+    display: inline-block;
+    width: 100%;
+    /* margin-bottom: 20px; */
+    position: relative;
+}
+.flam-gyn-inner .flam-sgl-div .flam-gyn-typ{
+    position: absolute;
+    width: 25%;
+}
+.flam-gyn-span{
+    position: absolute;
+    margin-top: -18px;
+}
+
+ .mat-option.mat-active{
+    background: #ffeadf;
+    border: 1px solid #dadada;
+}
+
+.flam-gyn-slct .mat-option:focus:not(.mat-option-disabled), .mat-option:hover:not(.mat-option-disabled){
+    background: #ffeadf;
+}
+
+/* Responsive code */
+/* 1370px css code */
+
+@media screen and (max-width:1370px){
+    .form-pt-det{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-wid{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-inner{
+        margin-top: 0;
+    }
+    .flam-gynae-div .flam-social-btn{
+        width: 74px;
+    }
+    .flam-gynae-div .flam-gyn-fld{
+        width: 90%;
+    }
+    .flam-gyn-inner .flam-sgl-div .flam-gyn-typ{
+        width: 30%;
+    }
+}
+
+/* 1024px css code */
+@media screen and (max-width:1199px) and (min-width:1024px){
+    .form-pt-det{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-wid{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-inner{
+        margin-top: 0;
+        width: 90%;
+    }
+    .flam-gh .flam-gynae-div{
+        width: 30%;
+    }
+    .flam-gh .flam-gyn-heading .flam-gyn-h4{
+        font-size: 12px
+    }
+    .flam-gynae-div .flam-social-btn{
+        width: 41% !important;
+        font-size: 10px;
+        padding: 6px 16px 2px 0;
+    }
+    .flam-gynae-div .flam-gyn-fld{
+        width: 90%;
+    }
+    .flam-gyn-inner .flam-when{
+        font-size: 12px;
+    }
+    .flam-gyn-inner .flam-sgl-div .flam-gyn-typ{
+        width: 30%;
+    }
+}
+
+/* 992px css code */
+@media screen and (max-width:1023px) and (min-width:992px){
+    .form-pt-det{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-wid{
+        margin-top: 0;
+    }
+    .flam-gh .flam-gyn-inner{
+        margin-top: 0;
+        width: 90%;
+    }
+    .flam-gh .flam-gynae-div{
+        width: 32%;
+    }
+    .flam-gh .flam-gyn-heading .flam-gyn-h4{
+        font-size: 12px
+    }
+    .flam-gynae-div .flam-social-btn{
+        width: 40% !important;
+        font-size: 10px;
+        padding: 6px 16px 2px 0;
+    }
+    .flam-gynae-div .flam-gyn-fld{
+        width: 92%;
+    }
+    .flam-gyn-inner .flam-when{
+        font-size: 12px;
+    }
+    .flam-gyn-inner .flam-sgl-div .flam-gyn-typ{
+        width: 30%;
+    }
+}
+
+/************************* medical condition css code *************************************/
+
+.flam-mc{
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-top: 0;
+}
+.form-pt-det .flam-heading-h4{
+    color: #787887;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans',sans-serif;
+} 
+
+.flam-mc .sgl-div input{
+    width: 100% !important;
+}
+.flam-mc .flam-mc-upper{
+    display: inline-block;
+    width: 49%;
+}
+.flam-mc .sgl-div{
+    margin-bottom: 0;
+}
+.flam-mc .sgl-div .flam-fm-fld{
+    width: 29%;
+    margin-right: 5%;
+    /* bottom: 0; */
+    /* float: left; */
+}
+.flam-mc .flam-mc-upper .sgl-div .flam-ct-fld{
+    width: 60%;
+}
+.flam-mc .flam-add-btn1{
+    color: #787887;
+    margin-right: 20px;
+}
+.flam-mc .flam-add-btn1 span img{
+    width: 27px;
+    height: 27px;
+    border: 1px solid #d7d7d8;
+    border-radius: 50%;
+    padding: 6px;
+    margin-right: 3px;
+}
+.flam-mc .flam-mc-addn{
+    width: 98%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.flam-mc .flam-gyn-add-fn{
+    background-color: #ffeadf;
+    width: 47%;
+    padding: 10px;
+    display: inline-block;
+
+}
+.flam-mc .flam-gyn-add-fn .flam-gyn-row1 .flam-mc-med{
+width: 40%;
+}
+.flam-mc .flam-gyn-add-fn .flam-gyn-row1 input{
+    /* margin-right: 3%; */
+    /* float: left; */
+    width: 57%;
+    padding: 6px 10px;
+    text-align: center;
+    margin-bottom: 4px;
+    border-radius: 7px;
+    border: 1px solid #c7c7d1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #c3c3cb;
+    letter-spacing: 0.05rem;
+    box-shadow: inset 0 0 9px #dbdbe4;
+}
+
+/* Responsive code*/
+/* 1370px css code */
+@media screen and (max-width:1370px){
+    .flam-mc .flam-gyn-add-fn .flam-gyn-row1 input{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:1199px) and (min-width:1023px){
+    .flam-mc .flam-gyn-add-fn .flam-gyn-row1 input{
+/* font-size: 8px; */
+font-size: 12px;
+    }
+}
+@media screen and (max-width:1023px) and (min-width:992px){
+    .flam-mc .flam-gyn-add-fn .flam-gyn-row1 input{
+/* font-size: 8px; */
+font-size: 12px;
+    }
+}
+
+
+
+
+
+
+

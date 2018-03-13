@@ -1,0 +1,29 @@
+.c-header {
+    margin-top: 20px;
+    padding: 0px 15px;
+}
+
+.deafulbtn {
+    background: #ffffff;
+    border-right: 1px solid #dfdfe9;
+    border-top: 1px solid #dfdfe9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #787887;
+}
+
+.deafulbtn-active {
+    background-color: #ededed !important;
+}
+
+.deafulbtn:first-child {
+    border-left: 1px solid #dfdfe9;
+    cursor: pointer;
+}
+
+.deafulbtn:active{background-color: #ededed !important;}

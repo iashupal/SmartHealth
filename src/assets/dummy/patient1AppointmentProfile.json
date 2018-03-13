@@ -1,0 +1,44 @@
+{
+    "id": 1234,
+    "title": "No event end date",
+    "firstName": "sdfvdsfs",
+    "secondName": "Tdfdsfsdf1",
+    "lastName": "dsasdasda",
+    "gender": "Male",
+    "age": 32,
+    "mobileNumber": 9874563211,
+    "emailId": "asdasda@gmail.com",
+    "dialingCode": "+91",
+    "appointmentStatus": "CANCELLED",
+    "doctorName": "Dr Test 3",
+    "uhid": "546543453",
+    "time": "10:45 AM",
+    "durationMinute": 30,
+    "avatarURL": "assets/images/rahul.jpg",
+    "patientDetails": ["Maleria", "Cold", "High Fever"],
+    "viewHistory": [{
+            "date": "2018-02-20",
+            "doctorName": "Dr Test 7",
+            "specialist": "Specialist",
+            "viewPrescriptionId": 1223
+        },
+        {
+            "date": "2018-02-20",
+            "doctorName": "Dr Test 7",
+            "specialist": "Specialist",
+            "viewPrescriptionId": 1223
+        },
+        {
+            "date": "2018-02-20",
+            "doctorName": "Dr Test 7",
+            "specialist": "Specialist",
+            "viewPrescriptionId": 1223
+        },
+        {
+            "date": "2018-02-20",
+            "doctorName": "Dr Test 7",
+            "specialist": "Specialist",
+            "viewPrescriptionId": 1223
+        }
+    ]
+}

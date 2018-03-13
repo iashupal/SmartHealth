@@ -1,0 +1,432 @@
+<div class="flam-div-cont1">
+    <form class="form-pt-det flam-form-crossref .flam-tp-container">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Prescriptive</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="flam-span-div flam-tp-div">
+                            <span class="flam-tp-span">Drug Name</span>
+                            <span class="flam-tp-span">Duration</span>
+                            <span class="flam-tp-span flam-tp-day-span"># of times/Day</span>
+                            <span class="flam-tp-span">Dose quantity</span>
+                            <span class="flam-tp-span flam-tp-when-span">When</span>
+                            <span class=" flam-tp-span">Special Instruction</span>
+                        </div>
+                      <!-- 1st block -->
+                        <div class="flam-tp-input">
+                              <!-- 1 box -->
+                              <mat-form-field class="flam-ct-fld flam-in-fld">
+                                    <input matInput type="text" placeholder="Type your drug name">
+                              </mat-form-field>
+                            
+                              <!-- 2 box -->
+                              <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                    <input matInput type="text" placeholder="# of days/month" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                              </mat-form-field>
+                            
+                            <mat-autocomplete #auto="matAutocomplete" class="flam-tp-autocmpt">
+                                <mat-option *ngFor="let option of options" [value]="option" class="flam-tp-opt">
+                                  {{ option }}
+                                </mat-option>
+                              </mat-autocomplete>
+                              <!-- 3rd box -->
+                              <mat-chip-list class="flam-tp-ch-list">
+                                <mat-chip class="flam-tp-chip" >M</mat-chip>
+                                <mat-chip class="flam-tp-chip">A</mat-chip>
+                                <mat-chip class="flam-tp-chip">E</mat-chip>
+                                <mat-chip class="flam-tp-chip">N</mat-chip>
+                                <mat-chip  class="flam-tp-chip">SOS</mat-chip>
+                              </mat-chip-list> 
+                              <!-- <mat-icon class="flam-tp-check">check_circle</mat-icon> -->
+                                   <!--4th box  -->
+                             <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                   <input type="text" placeholder="capsule" matInput [formControl]="myControl" [matAutocomplete]="autoCapsule">
+                            </mat-form-field>
+                            <mat-autocomplete #autoCapsule="matAutocomplete" >
+                                <mat-option *ngFor="let point of points" [value]="point" class="flam-tp-opt">
+                                  {{ point }}
+                                </mat-option>
+                              </mat-autocomplete>
+                              <!-- 5th box -->
+                             <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                    <input type="text" placeholder="choose" matInput [formControl]="myControl" [matAutocomplete]="autoselect">
+                             </mat-form-field>
+                             
+                              <mat-autocomplete #autoselect="matAutocomplete" >
+                                  <mat-option *ngFor="let select of selects" [value]="select" class="flam-tp-opt">
+                                    {{ select }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                              
+
+                              
+                               <!-- 6th box -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld">
+                                    <input matInput type="text" placeholder="Type your fee text">
+                               </mat-form-field>
+                               
+                        </div>
+                         <!-- 2nd block -->
+                         <div class="flam-tp-input">
+                                <!-- 1 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld">
+                                        <input matInput type="text" placeholder="Type your drug name">
+                                </mat-form-field>
+                              
+                                <!-- 2 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                        <input type="text" placeholder="# of days/month" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                </mat-form-field>
+                              
+                              <mat-autocomplete #auto="matAutocomplete">
+                                  <mat-option *ngFor="let option of options" [value]="option" class="flam-tp-opt">
+                                    {{ option }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 3rd box -->
+                                <mat-chip-list class="flam-tp-ch-list">
+                                  <mat-chip class="flam-tp-chip">M</mat-chip>
+                                  <mat-chip class="flam-tp-chip">A</mat-chip>
+                                  <mat-chip class="flam-tp-chip">E</mat-chip>
+                                  <mat-chip class="flam-tp-chip">N</mat-chip>
+                                  <mat-chip  class="flam-tp-chip">SOS</mat-chip>
+                                </mat-chip-list> 
+                                     <!--4th box  -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                    <input matInput type="text" placeholder="capsule" matInput [formControl]="myControl" [matAutocomplete]="autoCapsule">
+                               </mat-form-field>
+                                     
+                              <mat-autocomplete #autoCapsule="matAutocomplete">
+                                  <mat-option *ngFor="let point of points" [value]="point" class="flam-tp-opt">
+                                    {{ point }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 5th box -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                    <input matInput type="text" placeholder="choose" matInput [formControl]="myControl" [matAutocomplete]="autoselect">
+                               </mat-form-field>
+                                
+                                <mat-autocomplete #autoselect="matAutocomplete" >
+                                    <mat-option *ngFor="let select of selects" [value]="select" class="flam-tp-opt">
+                                      {{ select }}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                                
+  
+                                
+                                 <!-- 6th box -->
+                                 <mat-form-field class="flam-ct-fld flam-in-fld">
+                                        <input matInput type="text" placeholder="Type your fee text"> 
+                                 </mat-form-field>
+                                
+                          </div>
+                           <!-- 3rd block -->
+                           <div class="flam-tp-input">
+                                <!-- 1 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld">
+                                      <input matInput type="text" placeholder="Type your drug name">
+                                </mat-form-field>
+                              
+                                <!-- 2 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                      <input matInput type="text" placeholder="# of days/month" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                </mat-form-field>
+                              
+                              <mat-autocomplete #auto="matAutocomplete" class="flam-tp-autocmpt">
+                                  <mat-option *ngFor="let option of options" [value]="option" class="flam-tp-opt">
+                                    {{ option }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 3rd box -->
+                                <mat-chip-list class="flam-tp-ch-list">
+                                  <mat-chip class="flam-tp-chip" >M</mat-chip>
+                                  <mat-chip class="flam-tp-chip">A</mat-chip>
+                                  <mat-chip class="flam-tp-chip">E</mat-chip>
+                                  <mat-chip class="flam-tp-chip">N</mat-chip>
+                                  <mat-chip  class="flam-tp-chip">SOS</mat-chip>
+                                </mat-chip-list> 
+                                <!-- <mat-icon class="flam-tp-check">check_circle</mat-icon> -->
+                                     <!--4th box  -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                     <input type="text" placeholder="capsule" matInput [formControl]="myControl" [matAutocomplete]="autoCapsule">
+                              </mat-form-field>
+                              <mat-autocomplete #autoCapsule="matAutocomplete" >
+                                  <mat-option *ngFor="let point of points" [value]="point" class="flam-tp-opt">
+                                    {{ point }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 5th box -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                      <input type="text" placeholder="choose" matInput [formControl]="myControl" [matAutocomplete]="autoselect">
+                               </mat-form-field>
+                               
+                                <mat-autocomplete #autoselect="matAutocomplete" >
+                                    <mat-option *ngFor="let select of selects" [value]="select" class="flam-tp-opt">
+                                      {{ select }}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                                
+  
+                                
+                                 <!-- 6th box -->
+                                 <mat-form-field class="flam-ct-fld flam-in-fld">
+                                      <input matInput type="text" placeholder="Type your fee text">
+                                 </mat-form-field>
+                                 
+                          </div>
+                           <!-- 4th block -->
+                           <div class="flam-tp-input">
+                                <!-- 1 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld">
+                                      <input matInput type="text" placeholder="Type your drug name">
+                                </mat-form-field>
+                              
+                                <!-- 2 box -->
+                                <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                      <input matInput type="text" placeholder="# of days/month" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                                </mat-form-field>
+                              
+                              <mat-autocomplete #auto="matAutocomplete" class="flam-tp-autocmpt">
+                                  <mat-option *ngFor="let option of options" [value]="option" class="flam-tp-opt">
+                                    {{ option }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 3rd box -->
+                                <mat-chip-list class="flam-tp-ch-list">
+                                  <mat-chip class="flam-tp-chip" >M</mat-chip>
+                                  <mat-chip class="flam-tp-chip">A</mat-chip>
+                                  <mat-chip class="flam-tp-chip">E</mat-chip>
+                                  <mat-chip class="flam-tp-chip">N</mat-chip>
+                                  <mat-chip  class="flam-tp-chip">SOS</mat-chip>
+                                </mat-chip-list> 
+                                <!-- <mat-icon class="flam-tp-check">check_circle</mat-icon> -->
+                                     <!--4th box  -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                     <input type="text" placeholder="capsule" matInput [formControl]="myControl" [matAutocomplete]="autoCapsule">
+                              </mat-form-field>
+                              <mat-autocomplete #autoCapsule="matAutocomplete" >
+                                  <mat-option *ngFor="let point of points" [value]="point" class="flam-tp-opt">
+                                    {{ point }}
+                                  </mat-option>
+                                </mat-autocomplete>
+                                <!-- 5th box -->
+                               <mat-form-field class="flam-ct-fld flam-in-fld flam-tp-inp">
+                                      <input type="text" placeholder="choose" matInput [formControl]="myControl" [matAutocomplete]="autoselect">
+                               </mat-form-field>
+                               
+                                <mat-autocomplete #autoselect="matAutocomplete" >
+                                    <mat-option *ngFor="let select of selects" [value]="select" class="flam-tp-opt">
+                                      {{ select }}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                                
+  
+                                
+                                 <!-- 6th box -->
+                                 <mat-form-field class="flam-ct-fld flam-in-fld">
+                                      <input matInput type="text" placeholder="Type your fee text">
+                                 </mat-form-field>
+                                 
+                          </div>
+
+
+
+                          <div class="flam-add-btn1 right">
+                            <span>
+                                <img src="assets/images/plus-icon.png">
+                            </span>Add
+                    </div>  
+
+                        <div class="btn-div flam-tp-btn-div">
+                            
+                            <div class="btn2">
+                                <button type="button" class="flam-tp-btn" data-toggle="modal" data-target="#myModal">Save and View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">Proccedures Recommended</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body flam-follow">                      
+                        <div class="flam-sgl-div">
+                            <!-- <input type="text" placeholder="Type your text here"> -->
+                            <mat-form-field class="flam-ct-fld flam-in-fld">
+                                    <input type="text" matInput placeholder="Type Your Text Here" [matAutocomplete]="auto2">
+                                </mat-form-field>
+                                <mat-autocomplete #auto2="matAutocomplete">
+                                    <mat-option *ngFor="let option of options" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                        </div>
+                        <div class="btn-div">
+                            <div class="btn1">
+                                <button type="button">Save</button>
+                            </div>
+                            <div class="btn2">
+                                <button type="button">Verify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">Supportive Treatment</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body flam-follow">                      
+                        <div class="flam-sgl-div">
+                            <!-- <input type="text" placeholder="Type your text here"> -->
+                            <mat-form-field class="flam-ct-fld flam-in-fld">
+                                    <input type="text" matInput placeholder="Type Your Text Here" [matAutocomplete]="auto2">
+                                </mat-form-field>
+                                <mat-autocomplete #auto2="matAutocomplete">
+                                    <mat-option *ngFor="let option of options" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                        </div>
+                        <div class="btn-div">
+                            <div class="btn1">
+                                <button type="button">Save</button>
+                            </div>
+                            <div class="btn2">
+                                <button type="button">Verify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed">Special Instruction</a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body flam-follow">                      
+                        <div class="flam-sgl-div">
+                            <!-- <input type="text" placeholder="Type your text here"> -->
+                            <mat-form-field class="flam-ct-fld flam-in-fld">
+                                    <input type="text" matInput placeholder="Type Your Text Here" [matAutocomplete]="auto2">
+                                </mat-form-field>
+                                <mat-autocomplete #auto2="matAutocomplete">
+                                    <mat-option *ngFor="let option of options" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                        </div>
+                        <div class="btn-div">
+                            <div class="btn1">
+                                <button type="button">Save</button>
+                            </div>
+                            <div class="btn2">
+                                <button type="button">Verify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--*************************** pop up ******************-->
+<div class="flam-content flam-appointment-content modal fade" id="myModal" role="dialog">
+        <div novalidate class="flam-tp-upper modal-dialog">
+             <table class="flam-tp-table">
+                <thead>
+                    <tr>
+                        <th>Drug Name</th>
+                        <th>Duration</th>
+                        <th># of times/Day</th>
+                        <th>Dose quantity</th>
+                        <th>When</th>
+                        <th>Special Instruction</th>
+                        <th><mat-icon class="flam-inv-star">star_border</mat-icon></th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>XYZMN 300mg</td>
+                            <td>4 Days</td>
+                            <td>
+                                    <mat-chip-list class="flam-tp-ch-list">
+                                            <mat-chip class="flam-tp-chip flam-tp-list">M</mat-chip>
+                                            <mat-chip class="flam-tp-chip flam-tp-list">A</mat-chip>
+                                            <mat-chip class="flam-tp-chip flam-tp-list">E</mat-chip>
+                                            <mat-chip class="flam-tp-chip flam-tp-list">N</mat-chip>
+                                    </mat-chip-list>
+                            </td>
+                            <td>2 capsule</td>
+                            <td>After Dinner</td>
+                            <td>Lorem ipsum</td>
+                            <td><mat-icon class="flam-inv-star">star_border</mat-icon></td>
+                        </tr>
+                        <tr>
+                                <td>XYZMN 300mg</td>
+                                <td>4 Days</td>
+                                <td>
+                                        <mat-chip-list class="flam-tp-ch-list">
+                                                <mat-chip class="flam-tp-chip flam-tp-list">M</mat-chip>
+                                                <mat-chip class="flam-tp-chip flam-tp-list">A</mat-chip>
+                                                <mat-chip class="flam-tp-chip flam-tp-list">E</mat-chip>
+                                                <mat-chip class="flam-tp-chip flam-tp-list">N</mat-chip>
+                                        </mat-chip-list>
+                                </td>
+                                <td>2 capsule</td>
+                                <td>After Dinner</td>
+                                <td>Lorem ipsum</td>
+                                <td><mat-icon class="flam-inv-star">star_border</mat-icon></td>
+                        </tr>
+                            <tr>
+                                    <td>XYZMN 300mg</td>
+                                    <td>4 Days</td>
+                                    <td>
+                                            <mat-chip-list class="flam-tp-ch-list">
+                                                    <mat-chip class="flam-tp-chip flam-tp-list">M</mat-chip>
+                                                    <mat-chip class="flam-tp-chip flam-tp-list">A</mat-chip>
+                                                    <mat-chip class="flam-tp-chip flam-tp-list">E</mat-chip>
+                                                    <mat-chip class="flam-tp-chip flam-tp-list">N</mat-chip>
+                                            </mat-chip-list>
+                                    </td>
+                                    <td>2 capsule</td>
+                                    <td>After Dinner</td>
+                                    <td>Lorem ipsum</td>
+                                    <td><mat-icon class="flam-inv-star">star_border</mat-icon></td>
+                            </tr>
+                                <tr>
+                                        <td>XYZMN 300mg</td>
+                                        <td>4 Days</td>
+                                        <td>
+                                                <mat-chip-list class="flam-tp-ch-list">
+                                                        <mat-chip class="flam-tp-chip flam-tp-list">M</mat-chip>
+                                                        <mat-chip class="flam-tp-chip flam-tp-list">A</mat-chip>
+                                                        <mat-chip class="flam-tp-chip flam-tp-list">E</mat-chip>
+                                                        <mat-chip class="flam-tp-chip flam-tp-list">N</mat-chip>
+                                                </mat-chip-list>
+                                        </td>
+                                        <td>2 capsule</td>
+                                        <td>After Dinner</td>
+                                        <td>Lorem ipsum</td>
+                                        <td><mat-icon class="flam-inv-star">star_border</mat-icon></td>
+                                </tr>
+                    </tbody>
+                
+            </table>
+        </div>
+</div>
