@@ -1,3 +1,12 @@
+/* header */
+.flam-contain .btn-div{
+  display: inline-block;
+    margin-left: 15px;
+    margin-top: 0;
+}
+
+
+
 /*sprite css start*/
 .sprite {
   background-image: url("../../assets/images/spritesheet.png");
@@ -73,6 +82,9 @@ z-index: 1;
   border-bottom: 1px solid #dadada;
   display: table;
 }
+.left-pane ul li.active{
+  background-color: #dadada;
+}
 .left-pane ul li a {
   width: 100%;
   height: 100%;
@@ -87,10 +99,11 @@ padding: 5px;
 background-color: #f7f7fa;
 border-left: 2px solid #ff8a4b;
 }
-.left-pane ul li a:hover {
+.left-pane ul li a:hover,.left-pane ul li a.active:focus{
   transition-duration: 0.6s;
   background-color: #f1f1f5;
 }
+
 .left-menu-items {
   position: absolute;
   left: 80px;
@@ -116,6 +129,11 @@ vertical-align: middle;
   font-size: 14px;
   color: #787887;
 }
+
+/* .left-pane ul li a:active,.left-pane ul li a:focus,.left-pane ul li a.active,.left-pane ul li a:hover  {
+  transition-duration: 0.6s;
+  background-color: #f1f1f5;
+} */
 
 
 .detail-div-lt {
@@ -193,7 +211,7 @@ transition-duration: 0.6s;
 width: 125px;
 font-family: 'Open Sans', sans-serif;
 font-weight: 600;
-font-size: 14px;
+font-size: 13px;
 }
 
 .flam-arr {
@@ -422,7 +440,7 @@ font-family: 'Open Sans', sans-serif;
 .flam-detail-div-rt-inner .flam-pill-tab-content #flam-vital .flam-div1a ul li h3 {
 font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 21px;
+  font-size: 20px;
   color: #787887;
   margin: 0px;
 }
@@ -574,7 +592,7 @@ display: inline-block;
 text-align: right;
 font-family: 'Open Sans', sans-serif;
 font-weight: 600;
-font-size: 14px;
+font-size: 13px;
 color: #787887;
 }
 /* .flam-ct-fld .mat-form-field-underline{
@@ -627,7 +645,7 @@ color: #c3c3cb;
 .flam-history-tab li a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 10px;
   color: #787887;
   border-top: 0px;
   border-radius: 0px;
@@ -700,7 +718,7 @@ color: #c3c3cb;
 .flam-when , .flam-since-when {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   color: #787887;
 }
 
@@ -937,7 +955,7 @@ width: 16%;
   margin-right: 5px;
 }
 .flam-tp-input .flam-ct-fld{
-  width: 16%;
+  width: 17%;
 }
 .flam-form-crossref .flam-tp-input input{
   width: 100%;
@@ -1068,6 +1086,9 @@ padding-left: 5px;
 
 /* 1370px css code */
 @media screen and (max-width:1520px) and (min-width:1370px){
+  .flam-tp-input .flam-ct-fld {
+    width: 17%;
+}
   .flam-tp-div .flam-tp-span{
     width: 13%;
   }
@@ -1093,21 +1114,37 @@ padding-left: 5px;
   /* .flam-form-crossref .flam-tp-input input{
     width: 13%;
   } */
+  .flam-tp-div .flam-tp-day-span {
+    width: 22% !important;
+}
+.flam-tp-input .flam-ct-fld {
+  width: 16%;
+}
   .flam-tp-div .flam-tp-span{
-    width: 13%;
+    width: 14%;
   }
   .flam-tp-inp{
-    width: 12% !important;
+    width: 13% !important;
   }
   .flam-tp-ch-list .flam-tp-chip{
     padding: 7px 4px;
   }
   .panel-body .flam-add-btn1 {
-    margin-right: 26px;
+    margin-right: 5px;
   }
   .flam-form-crossref{
     padding: 0px;
   }
+}
+
+/* 1227px css code */
+@media screen and (max-width:1228px){
+  .flam-tp-input .flam-ct-fld {
+    width: 16%;
+}
+.panel-body .flam-add-btn1 {
+  margin-right: 10px !important;
+}
 }
 /* 1200px css code */
 @media screen and (max-width:1279px) and (min-width:1200px){
@@ -1121,7 +1158,7 @@ padding-left: 5px;
     width: 12% !important;
   }
   .panel-body .flam-add-btn1 {
-    margin-right: 22px;
+    margin-right: 5px;
   }
   .flam-tp-ch-list .flam-tp-chip{
     padding: 7px 4px;
@@ -1143,7 +1180,7 @@ padding-left: 5px;
     width: 15%;
   }
   .flam-tp-inp{
-    width: 15% !important;
+    width: 16% !important;
   }
    /* .flam-content .flam-tp-upper {
     width: 93%;
@@ -1164,12 +1201,21 @@ padding-left: 5px;
     width: 26% !important;
   } */
   .panel-body .flam-add-btn1{
-    margin-right: 21px;
+    margin-right: 5px !important;
   }
   .btn-div .btn2 .flam-tp-btn{
     padding: 8px 12px;
     font-size: 12px;
   }
+}
+/* 1126css code */
+@media screen and (max-width:1126px){
+  .flam-tp-inp {
+    width: 15% !important;
+}
+.panel-body .flam-add-btn1 {
+  margin-right: 16px !important;
+}
 }
 /* 992px css */
 @media screen and (max-width:1023px) and (min-width:992px){
@@ -1179,6 +1225,12 @@ padding-left: 5px;
    .flam-content .flam-tp-upper {
     width: 96%;
   }
+  .flam-tp-input .flam-ct-fld {
+    width: 15%;
+}
+.flam-tp-inp[_ngcontent-c1] {
+  width: 14% !important;
+}
   /* .flam-form-crossref .flam-tp-input input{
     width: 12%;
   }
@@ -1195,10 +1247,18 @@ padding-left: 5px;
     width: 26% !important;
   } */
   .panel-body .flam-add-btn1{
-    margin-right: 25px;
+    margin-right: 18px !important;
   }
   .btn-div .btn2 .flam-tp-btn{
     padding: 8px 12px;
     font-size: 12px;
   }
 }
+
+
+
+/* additional css */
+
+/* #flam-container .flam-patient .mat-drawer-container {
+  z-index: 0 !important;
+} */

@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { LoginModel } from '../models/auth.model';
+import { VALIDATION_MESSAGES } from '../constants/validation-messages';
 import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { CookieService } from 'ngx-cookie';
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   loginModel: LoginModel;
   errorMessage: string;
   errorStatusCode: number;
+  VALIDATION_MESSAGES = VALIDATION_MESSAGES;
 
   constructor(private authService: AuthService, private router: Router, private cookieService: CookieService) {
     this.loginModel = {
@@ -35,7 +37,7 @@ export class LoginComponent implements OnInit {
   createForm(loginModel: LoginModel) {
     this.loginForm = new FormGroup({
       username: new FormControl(loginModel.username, Validators.required),
-      password: new FormControl(loginModel.password, [Validators.required] )
+      password: new FormControl(loginModel.password, [Validators.required, Validators.minLength(6)] )
     });
   }
 

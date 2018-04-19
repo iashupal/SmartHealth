@@ -3,8 +3,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { MessageService } from '../services/message.service';
 import { UserProfileResponseModel, UserBranchResponseModel, City, State, Country, Locality, BranchInfo } from '../models/auth.model';
+import { LOCALSTORAGE_VARIABLES } from '../constants/common-constants';
+import { VALIDATION_MESSAGES } from '../constants/validation-messages';
 import { MatRadioChange } from '@angular/material';
+import { CommonHeaderComponent } from '../common-header/common-header.component';
 import Cookies from 'js-cookie';
 declare var getAllCookies: any;
 
@@ -16,12 +20,9 @@ export class BranchComponent implements OnInit, AfterViewInit {
 
   errorMessage: string;
   errorStatusCode: number;
-  locations = [
-    'Fortis Escorts Heart Institute, Okhla Road',
-    'Fortis Flt. Lt. Rajan Dhall Hospital, Vasant Kunj',
-    'Fortis Hospital, Shalimar Bagh'
-  ];
-  selectedBranchID: number;
+  VALIDATION_MESSAGES = VALIDATION_MESSAGES;
+  showBranchIdErrorMsg = false;
+  selectedBranch: BranchInfo;
   branchForm: FormGroup;
   check: any;
   city: City;
@@ -31,8 +32,11 @@ export class BranchComponent implements OnInit, AfterViewInit {
   branchInfo: BranchInfo;
   userProfileResponseModel: UserProfileResponseModel;
   userBranchResponseModel: UserBranchResponseModel;
+  Branch_Id: number;
+  Branch_HIS_Integration_Flag: boolean;
+  @ViewChild('commonHeaderComponent') commonHeaderComponent: CommonHeaderComponent;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private msgService: MessageService) {
     this.branchForm = new FormGroup({
       branchListControl: new FormControl('', Validators.required)
     });
@@ -87,6 +91,7 @@ export class BranchComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+
     this.authService.Get_organisation_users_pofile().subscribe(
       data => {
         console.log('profile in component', data);
@@ -101,6 +106,12 @@ export class BranchComponent implements OnInit, AfterViewInit {
         this.userProfileResponseModel.mobile = data.mobile;
         this.userProfileResponseModel.qualification = data.qualification;
         this.userProfileResponseModel.specialisation = data.specialisation;
+        // Set LocalStorage Variables
+        localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_SALUTATION, '');
+        localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_FIRST_NAME, this.userProfileResponseModel.first_name);
+        localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_LAST_NAME, this.userProfileResponseModel.last_name);
+        localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_ID, this.userProfileResponseModel.id.toString());
+        this.msgService.Update_LocalStorage_Subject();
       },
       (error: HttpErrorResponse) => {
         this.errorMessage = error.message;
@@ -134,30 +145,28 @@ export class BranchComponent implements OnInit, AfterViewInit {
   }
 
   update_Organisation_Users_logs() {
-    this.authService.post_organisation_user_logs(this.selectedBranchID).subscribe(
-      data => {
-        console.log('orranistion user log data', data);
-        this.router.navigateByUrl('/dashboard');
-      },
-      (error: HttpErrorResponse) => {
-        this.errorMessage = error.message;
-        this.errorStatusCode = error.status;
-        console.log('orrganistion user logs error', error);
-      }
-    );
+    if (this.branchForm.valid) {
+      this.authService.post_organisation_user_logs(this.selectedBranch.id).subscribe(
+        data => {
+          console.log('orranistion user log data', data);
+          localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID, this.selectedBranch.id.toString());
+          this.router.navigateByUrl('/dashboard');
+        },
+        (error: HttpErrorResponse) => {
+          this.errorMessage = error.message;
+          this.errorStatusCode = error.status;
+          console.log('orrganistion user logs error', error);
+        }
+      );
+    } else {
+      this.showBranchIdErrorMsg = true;
+    }
   }
 
   onBranchSelection(event: MatRadioChange) {
-    this.selectedBranchID = event.value;
-    console.log('radio button value in onBranchSelection', this.selectedBranchID);
-  }
-
-  changecolor(location) {
-
-    this.check = location;
-
-  }
-  changeMe(location) {
-    return this.check === location;
+    this.showBranchIdErrorMsg = false;
+    this.selectedBranch = event.value;
+    localStorage.setItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID, this.selectedBranch.id.toString());
+    this.msgService.Update_LocalStorage_Subject();
   }
 }

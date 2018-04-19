@@ -17,7 +17,8 @@ export class NoopHttpInterceptor implements HttpInterceptor {
         const authService = this.injector.get(AuthService);
         const signedValue = authService.xSignedValue;
         const signatureValue = authService.xSignatureValue;
-        let csrfTokenValue = authService.xCsrftokenValue;
+        //let csrfTokenValue = authService.xCsrftokenValue;
+        let csrfTokenValue = localStorage.getItem('authService.csrftoken');
         let cloneReq;
         console.log('csrf token in interceptor', csrfTokenValue);
         if (csrfTokenValue !== '' && csrfTokenValue !== null && csrfTokenValue !== undefined) {
@@ -27,13 +28,17 @@ export class NoopHttpInterceptor implements HttpInterceptor {
                 withCredentials: true
             });
         } else {
+            console.log("inside http interceptor else")
             if (!req.url.includes('login')) {
+                console.log("inside http interceptor else if")
                 cloneReq = req.clone({
                     headers: req.headers.append('X-SIGNED', signedValue).append('X-SIGNATURE', signatureValue)
-                        .append('X-CSRFToken', '44vppq1h2PErw7skI2jcYm3IrOYhySAKMOnaVr4lBXX21HAJN0ZWO9u3D4j3ZCBi'),
+                        .append('X-CSRFToken', 'n5P7XhFXIf3W1VrEpcdlIvYKpNSp9VuhOYJ4C25ZeynS4ZnOG8w1kUw24SxJ63FP'),
                     withCredentials: true
                 });
+                console.log("header is ", cloneReq)
             } else {
+                console.log("inside http interceptor else else")
                 cloneReq = req.clone({
                     headers: req.headers.append('X-SIGNED', signedValue).append('X-SIGNATURE', signatureValue),
                     withCredentials: true
@@ -50,6 +55,7 @@ export class NoopHttpInterceptor implements HttpInterceptor {
                         csrfTokenValue = this.cookieService.get('csrftoken');
                         authService.xCsrftokenValue = csrfTokenValue;
                         console.log('authService.xCsrftokenValue', authService.xCsrftokenValue);
+                        localStorage.setItem('authService.csrftoken', authService.xCsrftokenValue);
                 }
             }
         );

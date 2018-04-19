@@ -3,6 +3,13 @@
 <div id="flam-lab-investigation">
   <div class="form-pt-det flam-in-contain">
     <h2 class="hdg">Lab Investigation</h2>
+
+    <app-smart-chip [itemKey]="'suggestion_sct'" [itemValueKey]="'suggestion'" [items]="staticSuggestions" [showAutocomplete]="'false'" (selectedChip)="selectedStaticSuggestion($event)" (removeChip)="removeStaticSuggestion($event)" (addToFavChip)="addToFav($event)"></app-smart-chip>
+
+    <app-smart-chip [itemKey]="'sct'" [itemValueKey]="'name'" [items]="selectedSuggestions" [showAutocomplete]="'true'" [autoCompleteItems]="dynamicSuggestions" (addChip)="addDynamicSuggestion($event)" (selectedChip)="selectedDynamicSuggestion($event)" (removeChip)="removeDynamicSuggestion($event)"
+        (addToFavChip)="addToFav($event)" (autocompleteEvent)="getDynamicSuggestions($event)"></app-smart-chip>
+
+    <!--
     <mat-form-field class="flam-in-fld">
         <mat-chip-list #chipList>
           <mat-chip class="flam-inv-chip" *ngFor="let pill of pills" [selectable]="selectable"
@@ -18,6 +25,7 @@
                  (matChipInputTokenEnd)="add($event)" />
         </mat-chip-list>
       </mat-form-field>
+      -->
     <!-- additional info -->
     <!-- selected tags div -->
 

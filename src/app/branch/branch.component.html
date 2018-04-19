@@ -1,4 +1,4 @@
-<header id="flam-branch-header">
+<!-- <header id="flam-branch-header">
   <div class="flam-contain clearfix">
     <div id="flam-logo">
       <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
@@ -87,8 +87,9 @@
       </div>
     </div>
   </div>
-</header>
+</header> -->
 <!-- header finish -->
+<app-common-header [showSearchBar]="false" [showAddPatientBtn]="false" [showAddWalkinBtn]="false"></app-common-header>
 
 <!-- branch-content  -->
 <div class="flam-content clearfix">
@@ -111,11 +112,14 @@
         <div class="flam-location_info">
           <form [formGroup]="branchForm" name="test" id="flam-form">
             <mat-radio-group formControlName="branchListControl" class="flam-radio_grp" (change)="onBranchSelection($event)">
-              <mat-radio-button class="flam-radio_btn" *ngFor="let branch of userBranchResponseModel.page_results" [value]="branch.id">
+              <mat-radio-button class="flam-radio_btn" *ngFor="let branch of userBranchResponseModel.page_results" [value]="branch">
                 {{branch.name}}
               </mat-radio-button>
             </mat-radio-group>
           </form>
+          <div style="float: left">
+            <mat-error *ngIf="showBranchIdErrorMsg">{{VALIDATION_MESSAGES.BRANCH.BRANCH_NAME.REQUIRED}}</mat-error>
+          </div>
           <button class="flam-button" (click)="update_Organisation_Users_logs()">Go</button>
           <!-- <span style="color: #ff8a4b">{{selectVal}}</span> -->
         </div>

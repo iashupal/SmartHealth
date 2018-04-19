@@ -1,17 +1,28 @@
 import { Injectable} from '@angular/core';
 import { setHours, setMinutes, setDay, getTime, getMinutes, getHours } from 'date-fns';
 import { CustomCalendarEvent } from './custom-calendar-event.interface';
-import { AppointmentStatusCountModel } from '../models/appointment-status-count.model';
+import { CalendarHeaderCountReqModel, CalendarHeaderCountResModel, CalendarAppointmentListReqModel,
+  CalendarAppointmentListResModel, OrganisationPatientInfo } from '../models/auth.model';
 import { environment } from '../../environments/environment';
 import { CoreServices } from '../core.service';
+import { ApiUrlService } from '../services/apiUrl.service';
+import { UtilService } from '../services/util.service';
 import { Observable } from 'rxjs';
 import { DASHBOARD_CONSTANTS } from './dashboard.constants';
 import { PatientAppointmentProfile } from '../models/patient-appointment-profile.model';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class DashboardService {
 
   httpOptions: any = {};
+  organisationPatientInfo: OrganisationPatientInfo;
+  calendarAppointmentListReqModel: CalendarAppointmentListReqModel;
+  calendarAppointmentListResModel: CalendarAppointmentListResModel;
+  calendarHeaderCountReqModel: CalendarHeaderCountReqModel = new CalendarHeaderCountReqModel();
+  calendarHeaderCountResModel: CalendarHeaderCountResModel = new CalendarHeaderCountResModel();
+  API_URL: string;
 
   events: CustomCalendarEvent[] = [
     {
@@ -180,25 +191,40 @@ export class DashboardService {
       }
     }
   ];
-
-  appointmentStatusCount: AppointmentStatusCountModel = new AppointmentStatusCountModel()
-
-  API_URL: string;
   
-  constructor(private coreServices: CoreServices){
-      this.API_URL = environment.API_URL
+  constructor(private coreServices: CoreServices, private apiUrlService: ApiUrlService, private utilService: UtilService,
+    private authService: AuthService) {
+      this.API_URL = environment.API_URL;
+      this.organisationPatientInfo = new OrganisationPatientInfo();
+      this.calendarAppointmentListReqModel = new CalendarAppointmentListReqModel();
+      this.calendarAppointmentListResModel = new CalendarAppointmentListResModel();
     }
 
-  getAppointmentStatusCount(){
-    this.appointmentStatusCount.all = 50;
-    this.appointmentStatusCount.completed = 10;
-    this.appointmentStatusCount.checkedIn = 10;
-    this.appointmentStatusCount.appointment = 20;
-    this.appointmentStatusCount.cancelled = 10;
-    return this.appointmentStatusCount;
+  getCalendarHeaderCount(branchId: any, dateType: any): Observable<CalendarHeaderCountResModel> {
+    const currentTime = Date.now();
+    const signed = 'current_time';
+    const signature = this.utilService.get_HMAC_SHA256(null, currentTime);
+    this.authService.setHeaderValues(signed, signature);
+    const requestOptions = {
+      params: new HttpParams().set('current_time', currentTime.toString())
+    };
+    return this.coreServices.get(this.apiUrlService.get_CalendarHeaderCount_Url(branchId, dateType.toUpperCase()), requestOptions);
   }
 
-  getDefaultPatientAppointmentProfileById(): Observable<PatientAppointmentProfile>{   
+  public GetCalendarAppointmentList(branchId: any, date_type: string, appointment_type: string):
+    Observable<CalendarAppointmentListResModel> {
+      const currentTime = Date.now();
+      const signature = this.utilService.get_HMAC_SHA256(null, currentTime);
+      const signed = 'current_time';
+      this.authService.setHeaderValues(signed, signature);
+      this.calendarAppointmentListReqModel.current_time = currentTime.toString();
+      this.calendarAppointmentListReqModel.limit = 50;
+      this.calendarAppointmentListReqModel.page = 1;
+      return this.coreServices.get(this.apiUrlService.Get_Calendar_Appointments_Url(branchId, date_type, appointment_type),
+        this.calendarAppointmentListReqModel);
+  }
+
+  getDefaultPatientAppointmentProfileById(): Observable<PatientAppointmentProfile> {
     return this.coreServices.get(this.API_URL + DASHBOARD_CONSTANTS.FETCH_DEFAULT_PATIENT_APPOINTMENT_PROFILE, {});
   }
 

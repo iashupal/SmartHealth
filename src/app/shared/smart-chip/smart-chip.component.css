@@ -1,0 +1,87 @@
+.demo-chip-list {
+    width: 100%;
+}
+
+.smart-in-fld {
+    width: 99%;
+    position: relative;
+}
+
+.smart-in-fld .smart-inv-chip {
+    /* width: 20%; */
+    margin-bottom: 10px;
+    background-color: #f7f7fa;
+    /* text-align: center; */
+    color: #787887;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.02rem;
+    padding-right: 0px;
+    padding: 10px 40px;
+    cursor: pointer;
+    /* margin-top: 5px; */
+    /* position: relative; */
+}
+
+.smart-in-fld .smart-inv-chip .smart-inv-star {
+    position: absolute;
+    color: white;
+    margin-left: -40px;
+    background: #787887;
+    border-radius: 50%;
+    font-size: 20px;
+    /* margin-top: -27px; */
+    height: 35px;
+    width: 35px;
+    padding: 7px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.smart-inv-chip .mat-chip-remove {
+    margin-right: -27px;
+    margin-left: 6px;
+}
+
+.smart-lab-input.mat-chip-input {
+    width: 100% !important;
+    flex: initial;
+    /* margin-right: 3%; */
+    /* margin-bottom: 20px; */
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    padding: 30px 15px;
+    border-radius: 7px;
+    border: 1px solid #c7c7d1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #dadada;
+    letter-spacing: 0.05rem;
+    box-shadow: inset 0 0 9px #dbdbe4;
+    clear: both;
+}
+
+.smart-lab-input-box{
+    width: 100% !important;
+    flex: initial;
+    /* margin-right: 3%; */
+    /* margin-bottom: 20px; */
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    padding: 30px 15px;
+    border-radius: 7px;
+    border: 1px solid #c7c7d1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #dadada;
+    letter-spacing: 0.05rem;
+    box-shadow: inset 0 0 9px #dbdbe4;
+    clear: both;
+}
+::ng-deep mat-form-field .mat-form-field-underline{
+    display: none !important;
+}

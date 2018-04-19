@@ -29,8 +29,9 @@
                 </div>
             <div class="flam-inner_div">
                 <mat-form-field class="flam-field">
-                <input matInput class="flam-login-input" formControlName="username" placeholder="UserName" required pattern="[a-zA-Z][a-zA-Z ]+">
-                <img src="assets/images/side-icon.png" class="flam-sIcon" alt="icon">
+                    <input matInput class="flam-login-input" formControlName="username" placeholder="UserName" required>
+                    <img src="assets/images/side-icon.png" class="flam-sIcon" alt="icon">
+                    <mat-error *ngIf="this.loginForm.get('username').hasError('required')">{{VALIDATION_MESSAGES.LOGIN.USERNAME.REQUIRED}}</mat-error>
                 </mat-form-field>
                  <!-- <div *ngIf="username?.touched" class="alert alert-danger message">
                  <div *ngIf="username.errors?.required" class="alert alert-danger message">
@@ -45,6 +46,8 @@
                 <mat-form-field class="flam-field">
                 <input type="password" matInput class="flam-login-input" formControlName="password" placeholder="Password" required>
                 <img src="assets/images/side-icon.png" class="flam-sIcon" alt="icon"> 
+                <mat-error *ngIf="this.loginForm.get('password').hasError('required')">{{VALIDATION_MESSAGES.LOGIN.PASSWORD.REQUIRED}}</mat-error>
+                <mat-error *ngIf="this.loginForm.get('password').hasError('minlength')">{{VALIDATION_MESSAGES.LOGIN.PASSWORD.MINLENGTH}}</mat-error>
                 </mat-form-field>
                 <!-- <div *ngIf="password?.touched" class="alert alert-danger message">
                  <div *ngIf="password.errors?.required" class="alert alert-danger message">
@@ -55,7 +58,7 @@
                 </div>
                 
             <div class="flam-inner_div clearfix" id="flam-inner_box">
-                <mat-checkbox type="checkbox" class="flam-input_check">Remember me</mat-checkbox>
+                <!-- <mat-checkbox type="checkbox" class="flam-input_check">Remember me</mat-checkbox> -->
                 <p class="right flam-login-pwd">Forgot Password?</p>
             </div>
             <div class="flam-inner_div">

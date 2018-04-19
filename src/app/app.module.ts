@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
 import {
   MatIconModule, MatButtonModule, MatSelectModule, MatInputModule, MatTooltipModule, MatCardModule,
@@ -46,6 +47,11 @@ import { AuthService } from './services/auth.service';
 import { ApiUrlService } from './services/apiUrl.service';
 import { UtilService } from './services/util.service';
 import { CoreHttpService } from './services/coreHttp.service';
+import { SmartChipModule } from './shared/smart-chip/smart-chip.module';
+import { EHRService } from './services/ehr.service';
+import { CommonHeaderModule } from './common-header/common-header.module';
+import { DiagnosisComponent } from "./ehr/diagnosis/diagnosis.component";
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -71,7 +77,8 @@ import { CoreHttpService } from './services/coreHttp.service';
     ImageInvestigationComponent,
     CrossRefComponent,
     GenExaminationComponent,
-    TreatmentComponent
+    TreatmentComponent,
+    DiagnosisComponent
     // ExpComponent
   ],
   // entryComponents: [CurrentTreatmentComponent],
@@ -84,9 +91,12 @@ import { CoreHttpService } from './services/coreHttp.service';
     MatIconModule, MatButtonModule, MatSelectModule, MatInputModule, MatTooltipModule, MatCheckboxModule,
     MatSidenavModule, MatAutocompleteModule, MatCardModule, MatChipsModule, MatToolbarModule, MatRadioModule, MatMenuModule,
     MatDatepickerModule, MatIconModule, MatTabsModule, MatNativeDateModule, HttpClientModule, MatOptionModule,
-    CookieModule.forRoot() ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: NoopHttpInterceptor, multi: true}, CoreServices, AuthService,
-    ApiUrlService, UtilService, CoreHttpService],
+    CookieModule.forRoot(),
+    SmartChipModule,
+    CommonHeaderModule
+  ],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: NoopHttpInterceptor, multi: true}, CoreServices, AuthService, EHRService,
+    ApiUrlService, UtilService, CoreHttpService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

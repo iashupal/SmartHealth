@@ -21,6 +21,7 @@ import { ImageInvestigationComponent } from './ehr/investigation/image-investiga
 import { CrossRefComponent } from './ehr/cross-referral/cross-ref.component';
 import { GenExaminationComponent } from './ehr/general-examination/gen-examination.component';
 import { TreatmentComponent } from './ehr/treatment-plan/treatment.component';
+import { DiagnosisComponent } from "./ehr/diagnosis/diagnosis.component";
 
 const routes: Routes = [
   {
@@ -96,6 +97,10 @@ const routes: Routes = [
     component: PComplaintComponent
   },
   {
+    path: 'diagnosis',
+    component: DiagnosisComponent
+  },
+  {
     path: 'investigation',
     component: InvestigationComponent,
     children: [
@@ -137,7 +142,7 @@ const routes: Routes = [
     loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
   },
   {
-    path : 'material-appointment/:tabName',
+    path : 'material-appointment',
     loadChildren : 'app/material-appointment/material-appointment.module#MaterialAppointmentModule'
   }
 ];

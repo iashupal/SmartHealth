@@ -1,12 +1,12 @@
 <div id="flam-existing-form">
     <div class="row">
         <div class="col-sm-9">
-            <form [formGroup]="searchPatientForm" (ngSubmit)="searchPatients()" class="flam-details flam-exist-form-detail">
+            <form (ngSubmit)="searchPatients()" class="flam-details flam-exist-form-detail">
                 <div class="row existing-patient-block">
                     <div class="col-sm-4">
                         <div class="flam-existing-input">
                             <mat-form-field class="flam-input-field">
-                                <input name="name" class="flam-input-field" formControlName="name" matInput placeholder="Patient Name" required>
+                                <input name="name" class="flam-input-field" [formControl]="nameCtrl" matInput placeholder="Patient Name" required>
                                 <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon flam-exist-icon" alt="icon">
                             </mat-form-field>
                         </div>
@@ -14,7 +14,7 @@
                     <div class="col-sm-4">
                         <div class="flam-existing-input">
                             <mat-form-field class="flam-input-field">
-                                <input name="mobileNumber" class="flam-input-field" formControlName="mobileNumber" matInput placeholder="Mobile Number" required>
+                                <input name="mobileNumber" class="flam-input-field" [formControl]="numberCtrl" matInput placeholder="Mobile Number" required>
                                 <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon flam-exist-icon" alt="icon">
                             </mat-form-field>
                         </div>
@@ -43,9 +43,9 @@
                     <div class="flam-existing-patient-table">
                         <mat-table #table [dataSource]="dataSource">
 
-                            <ng-container matColumnDef="firstName">
+                            <ng-container matColumnDef="name">
                                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+                                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
                             </ng-container>
 
 
@@ -55,55 +55,68 @@
                             </ng-container>
 
 
-                            <ng-container matColumnDef="age">
+                            <ng-container matColumnDef="dob">
                                 <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+                                <mat-cell *matCellDef="let element"> {{element.dob}} </mat-cell>
                             </ng-container>
 
 
-                            <ng-container matColumnDef="mobileNumber">
+                            <ng-container matColumnDef="mobile">
                                 <mat-header-cell *matHeaderCellDef> Mobile Number </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{element.mobileNumber}} </mat-cell>
+                                <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
                             </ng-container>
 
                             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelectPatient(row)"></mat-row>
                         </mat-table>
                     </div>
                 </div>
 
 
 
-                <div class="col-lg-3 col-md-4 col-sm-5">
+                <div *ngIf="selectedPatient" class="col-lg-3 col-md-4 col-sm-5">
                     <mat-card class="app-form">
                         FIX APPOINTMENT
                         <div class="example-container ">
-                            <div class="fix-appoinment">
-                                <mat-select class="test-1" placeholder="Date">
-                                    <mat-option value="option">India</mat-option>
-                                    <mat-option value="option">USA</mat-option>
-                                </mat-select>
+                            <div class="fix-appoinment" [formGroup]="appointmentForm">
+                                <mat-form-field>
+                                    <input matInput formControlName="selectedDate" name="selectedDate" [matDatepicker]="picker" placeholder="Select Date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                                
 
-                                <mat-select placeholder="Time">
-                                    <mat-option value="option">India</mat-option>
-                                    <mat-option value="option">USA</mat-option>
-                                </mat-select>
+                                <mat-form-field (click)="toggleTimePicker()">
+                                    <input matInput name="selectedTime" formControlName="selectedTime"  placeholder="Select Time">
+                                     <mat-icon matSuffix >access_time</mat-icon>
+                                </mat-form-field>
+                                 <w-time [isOpen]= "isOpen" color="primary" [(userTime)]="exportTime" (onRevert)="onRevert()" (onSubmit)="onSubmit($event)"></w-time> 
+                                <mat-form-field>
+                                    <input name="selectedDoctor" formControlName="selectedDoctor" placeholder="Select Doctor" type="text" matInput [formControl]="doctorControl" [matAutocomplete]="doctorAutocomplete">
+                                    <mat-autocomplete #doctorAutocomplete="matAutocomplete" [displayWith]="displayDoctorName" (optionSelected)="onSelectedDoctor($event)">
+                                        <mat-option *ngFor="let suggestion of doctorSuggestions" [value]="suggestion">
+                                            {{ suggestion?.first_name }} {{ suggestion?.last_name }}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
 
-                                <mat-select placeholder="Doctor">
-                                    <mat-option value="option">India</mat-option>
-                                    <mat-option value="option">USA</mat-option>
-                                </mat-select>
+                                <mat-form-field>
+                                    <input name="selectedDepartment" formControlName="selectedDepartment" placeholder="Select Department" type="text" matInput [formControl]="departmentControl" [matAutocomplete]="departmentAutocomplete">
+                                    <mat-autocomplete #departmentAutocomplete="matAutocomplete" [displayWith]="displayDepartmentName" (optionSelected)="onSelectedDepartment($event)">
+                                        <mat-option *ngFor="let suggestion of departmentSuggestions" [value]="suggestion">
+                                            {{ suggestion?.name }}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
 
-                                <mat-select placeholder="Department">
-                                    <mat-option value="option">India</mat-option>
-                                    <mat-option value="option">USA</mat-option>
-                                </mat-select>
+                                <mat-form-field>
+                                    <input formControlName="visitId" name="visitId" type="text" matInput placeholder="Enter Visit Id">
+                                </mat-form-field>
                             </div>
                             <div class="flam-inner_div flam-appointment-field flam-upper-btn clearfix">
-                                <button type="submit" name="button" class="flam-btn_patient flam-side-form-btn flam-a-btn">Confirm</button>
-                                <button type="submit" name="button" class="flam-btn_patient flam-cancel_btn right flam-a-btn">Cancel</button>
+                                <button type="submit" name="button" class="flam-btn_patient flam-side-form-btn flam-a-btn" (click)="createAppointment()">Confirm</button>
+                                <button type="submit" name="button" class="flam-btn_patient flam-cancel_btn right flam-a-btn" (click)="cancelAppointment()">Cancel</button>
                             </div>
-                            
                         </div>
                     </mat-card>
                 </div>

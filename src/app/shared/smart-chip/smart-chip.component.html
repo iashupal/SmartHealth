@@ -1,0 +1,28 @@
+<mat-form-field *ngIf="showAutocomplete == 'false'" class="smart-in-fld smart-in-scroll">
+    <mat-chip-list #chipList>
+        <mat-chip class="smart-inv-chip" *ngFor="let item of items" [selectable]="selectable" [removable]="removable" (remove)="remove(item)">
+            <span (click)="selectedChip.next(item)">{{item[itemValueKey]}}</span>
+            <mat-icon class="smart-inv-star" [ngStyle]="{'background':item.isFav ? '#ff8a4b' : '' }" (click)="addToFavChip.next(item)">star_border</mat-icon>
+            <mat-icon matChipRemove *ngIf="removable" class="smart-inv-clear">cancel</mat-icon>
+        </mat-chip>
+    </mat-chip-list>
+</mat-form-field>
+
+
+<mat-form-field *ngIf="showAutocomplete == 'true'" class="smart-in-fld smart-in-scroll smart-lab-uline">
+    <div class="smart-lab-input-box">
+    <mat-chip-list #chipList>
+        <mat-chip class="smart-inv-chip" *ngFor="let item of items" [selectable]="selectable" [removable]="removable" (remove)="remove(item)">
+            <span (click)="selectedChip.next(item)">{{item[itemValueKey]}}</span>
+            <mat-icon class="smart-inv-star" [ngStyle]="{'background':item.isFav ? '#ff8a4b' : '' }" (click)="addToFavChip.next(item)">star_border</mat-icon>
+            <mat-icon matChipRemove *ngIf="removable" class="smart-inv-clear">cancel</mat-icon>
+        </mat-chip>
+        <input   placeholder="" #itemInput [formControl]="itemCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let item of autoCompleteItems" [value]="item">
+            {{ item.name }}
+        </mat-option>
+    </mat-autocomplete>
+    </div>
+</mat-form-field>

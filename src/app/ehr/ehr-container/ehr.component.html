@@ -1,7 +1,8 @@
 <header id="flam-branch-header">
     <div class="flam-contain clearfix">
         <div id="flam-logo">
-            <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo">
+            <!-- <img class="flam-branch-logo" src="assets/images/logo-main.jpg" alt="logo"> -->
+            <img class="flam-branch-logo" src="assets/images/color-logo.png" alt="logo">
         </div>
         <!-- search-header -->
         <div id="flam-searchPatient">
@@ -13,6 +14,11 @@
                 <i class="material-icons">search</i>
             </div>
 
+        </div>
+        <div class="btn-div">
+          <div class="btn2">
+            <button type="button">Verify</button>
+          </div>
         </div>
         <!-- finish search-header -->
         <!-- <div class="flam-add-btn">
@@ -112,32 +118,32 @@
 <div class="left-pane" cmenuHover>
     <ul class="list-unstyled lt-mn">
         <li>
-            <a>
+            <a [routerLink]="['vital']" routerLinkActive="active">
                 <i class="sprite ico-1"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['current-treatment']" routerLinkActive="active">
                 <i class="sprite ico-2"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['history']" routerLinkActive="active">
                 <i class="sprite ico-3"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['p-complaint']" routerLinkActive="active">
                 <i class="sprite ico-4"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['gen-examination']" routerLinkActive="active">
                 <i class="sprite ico-5"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['investigation']" routerLinkActive="active">
                 <i class="sprite ico-6"></i>
             </a>
         </li>
@@ -152,12 +158,12 @@
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['treatment-plan']" routerLinkActive="active">
                 <i class="sprite ico-9"></i>
             </a>
         </li>
         <li>
-            <a>
+            <a [routerLink]="['cross-ref']" routerLinkActive="active">
                 <i class="sprite ico-10"></i>
             </a>
         </li>

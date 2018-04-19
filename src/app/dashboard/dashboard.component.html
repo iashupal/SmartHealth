@@ -1,4 +1,4 @@
-<app-common-header></app-common-header>
+<app-common-header [showSearchBar]="true" [showAddPatientBtn]="true" [showAddWalkinBtn]="true"></app-common-header>
 <div id="flam-container">
     <div class="row flam-patient">
 
@@ -143,31 +143,31 @@
                                     <p>
                                         <a>ALL</a>
                                     </p>
-                                    <p class="float-right">{{appointmentStatusCount.all}}</p>
+                                    <p class="float-right">{{calendarHeaderCountResModel.all}}</p>
                                 </div>
                                 <div (click)="onAppointmentStatusChange(dashboardConstant.APPOINTMENT)" [ngClass]="{'div2-active': (selectedHeaderItem == dashboardConstant.APPOINTMENT)}" class="col div2 defalut-flex">
                                     <p>
                                         <a>APPOINTMENT</a>
                                     </p>
-                                    <p class="float-right">{{appointmentStatusCount.appointment}}</p>
+                                    <p class="float-right">{{calendarHeaderCountResModel.PENDING}}</p>
                                 </div>
                                 <div (click)="onAppointmentStatusChange(dashboardConstant.CHECKED_IN)" [ngClass]="{'div3-active': (selectedHeaderItem == dashboardConstant.CHECKED_IN)}" class="col div3 defalut-flex">
                                     <p>
                                         <a>CHECKED-IN</a>
                                     </p>
-                                    <p class="float-right">{{appointmentStatusCount.checkedIn}}</p>
+                                    <p class="float-right">{{calendarHeaderCountResModel.CHECKED_IN}}</p>
                                 </div>
                                 <div (click)="onAppointmentStatusChange(dashboardConstant.CANCELLED)" [ngClass]="{'div4-active': (selectedHeaderItem == dashboardConstant.CANCELLED)}" class="col div4 defalut-flex">
                                     <p>
                                         <a>CANCELLED</a>
                                     </p>
-                                    <p class="float-right">{{appointmentStatusCount.cancelled}}</p>
+                                    <p class="float-right">{{calendarHeaderCountResModel.CANCELLED}}</p>
                                 </div>
                                 <div (click)="onAppointmentStatusChange(dashboardConstant.COMPLETED)" [ngClass]="{'div5-active': (selectedHeaderItem == dashboardConstant.COMPLETED)}" class="col div5 defalut-flex">
                                     <p>
                                         <a>COMPLETED</a>
                                     </p>
-                                    <p class="float-right">{{appointmentStatusCount.completed}}</p>
+                                    <p class="float-right">{{calendarHeaderCountResModel.CHECKED_OUT}}</p>
                                 </div>
                             </div>
                         </div>

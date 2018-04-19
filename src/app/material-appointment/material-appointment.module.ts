@@ -17,10 +17,15 @@ import { MaterialAppointmentService } from './material-appointment.service';
 import { CommonHeaderModule } from '../common-header/common-header.module';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { FixAppointmentModalComponent } from './fix-appointment-modal/fix-appointment-modal.component';
+import { MatDialogModule } from '@angular/material';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MaterialTimeControlModule } from '../shared/time-picker/material-time-control.module';
+import {MatIconModule} from '@angular/material/icon';
 const routes: Routes = [
-  { path: '', component: PatientAppointmentComponent}
-
+  { path: '', redirectTo: 'type/0/tab/NEW_PATIENT'},
+  //{ path: '**', redirectTo: 'type/0/tab/NEW_PATIENT'},
+  { path: 'type/:typeId/tab/:tabName', component: PatientAppointmentComponent }
 ];
 
 @NgModule({
@@ -37,9 +42,14 @@ const routes: Routes = [
     MatButtonModule,
     MatSelectModule,
     RouterModule.forChild(routes),
-    CommonHeaderModule
+    CommonHeaderModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MaterialTimeControlModule,
+    MatIconModule 
   ],
-  declarations: [PatientAppointmentComponent, RegisterPatientComponent, ExistingPatientComponent],
+  entryComponents:[FixAppointmentModalComponent],
+  declarations: [PatientAppointmentComponent, RegisterPatientComponent, ExistingPatientComponent, FixAppointmentModalComponent],
   providers: [MaterialAppointmentService]
 })
 export class MaterialAppointmentModule { }

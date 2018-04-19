@@ -5,7 +5,7 @@ import { CoreHttpService } from './coreHttp.service';
 import { UtilService } from './util.service';
 import { ApiUrlService } from './apiUrl.service';
 import { BaseRequestModel, LoginModel, LoginRequestModel, LoginResponseModel, UserProfileResponseModel,
-    UserBranchResponseModel, OrganisationUserLogsReqModel, BranchInfo } from '../models/auth.model';
+    UserBranchResponseModel, OrganisationUserLogsReqModel, BranchInfo, LogoutReqModel, LogoutResModel } from '../models/auth.model';
 
 @Injectable()
 export class AuthService {
@@ -17,6 +17,8 @@ export class AuthService {
     xSignedValue: string;
     xSignatureValue: string;
     xCsrftokenValue: string;
+    logoutReqModel: LogoutReqModel;
+    logoutResModel: LogoutResModel;
 
     constructor(private httpClient: HttpClient, private coreHttpService: CoreHttpService, private utilService: UtilService,
         private apiUrlService: ApiUrlService) {
@@ -33,11 +35,17 @@ export class AuthService {
             event: null,
             branch_id: null
         };
+        this.logoutReqModel = new LogoutReqModel();
+        this.logoutResModel = new LogoutResModel();
     }
 
-    private setHeaderValues(signed: string, signature: string) {
+    public setHeaderValues(signed: string, signature: string) {
         this.xSignedValue = signed;
         this.xSignatureValue = signature;
+    }
+
+    public ClearLocalStorage() {
+        localStorage.clear();
     }
 
     public Organisation_users_login(loginModel: LoginModel): Observable<LoginResponseModel> {
@@ -74,12 +82,21 @@ export class AuthService {
 
     public post_organisation_user_logs(branchID: number) {
         const currentTime = Date.now();
-        this.organisationUserLogsReqModel.branch_id = branchID.toString();
+        this.organisationUserLogsReqModel.branch_id = branchID;
         this.organisationUserLogsReqModel.current_time = currentTime.toString();
         this.organisationUserLogsReqModel.event = 'LOGIN';
         const signature = this.utilService.get_HMAC_SHA256(null, currentTime);
         this.setHeaderValues('current_time', signature);
         return this.httpClient.post(this.apiUrlService.get_organisation_user_logs_url(), this.organisationUserLogsReqModel);
+    }
 
+    public Logout_Application(branchId: any): Observable<LogoutResModel> {
+        const currentTime = Date.now();
+        this.logoutReqModel.current_time = currentTime.toString();
+        this.logoutReqModel.branch_id = branchId;
+        const signed = 'current_time';
+        const signature = this.utilService.get_HMAC_SHA256(null, currentTime);
+        this.setHeaderValues(signed, signature);
+        return this.httpClient.post<LogoutResModel>(this.apiUrlService.get_organisation_users_logout_Url(), this.logoutReqModel);
     }
 }

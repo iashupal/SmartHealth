@@ -8,7 +8,10 @@ import { CalendarEvent } from 'angular-calendar';
 import { setHours, setMinutes, setDay } from 'date-fns';
 import { CustomCalendarEvent } from './custom-calendar-event.interface';
 import { DashboardService } from './dashboard.service';
-import { AppointmentStatusCountModel } from '../models/appointment-status-count.model';
+import { CalendarHeaderCountResModel } from '../models/auth.model';
+import { LOCALSTORAGE_VARIABLES } from '../constants/common-constants';
+import { MessageService } from '../services/message.service';
+import { HttpErrorResponse } from '@angular/common/http/src/response';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +20,7 @@ import { AppointmentStatusCountModel } from '../models/appointment-status-count.
 })
 export class DashboardComponent implements OnInit {
 
-  dashboardConstant = DASHBOARD_CONSTANTS
+  dashboardConstant = DASHBOARD_CONSTANTS;
   showCheckIn: boolean = true;
   showStartConsult: boolean = false;
   showCancelBlock: boolean = false;
@@ -27,15 +30,18 @@ export class DashboardComponent implements OnInit {
   viewDate: Date = new Date();
   displayEvents: CustomCalendarEvent[] = [];
   dbEvents: CustomCalendarEvent[] = [];
-  appointmentStatusCount: AppointmentStatusCountModel = new AppointmentStatusCountModel()
+  calendarHeaderCountResModel: CalendarHeaderCountResModel = new CalendarHeaderCountResModel();
   patientAppointmentProfile: PatientAppointmentProfile = new PatientAppointmentProfile()
-  selectedHeaderItem : string  = this.dashboardConstant.ALL
+  selectedHeaderItem : string  = this.dashboardConstant.ALL;
+  branchId: any;
   
 
   @ViewChild(MatSidenav) sidenav: MatSidenav
   @ViewChildren('out', { read: ElementRef }) menuButtons: QueryList<ElementRef>
 
-  constructor(private media: ObservableMedia, private dashboardService: DashboardService){
+  constructor(private media: ObservableMedia, private dashboardService: DashboardService, private msgService: MessageService){
+    console.log('localStorage in constructor first', localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_FIRST_NAME));
+    console.log('localStorage in constructor branch', localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID));
     this.media.subscribe((mediaChange: MediaChange) => {
       this.menuMode = this.getMode(mediaChange);
       this.opened = this.getOpened(mediaChange);
@@ -43,11 +49,18 @@ export class DashboardComponent implements OnInit {
 
     this.displayEvents = this.sortCalendarEventByAppointmentDate(this.dashboardService.events);
     this.dbEvents = this.sortCalendarEventByAppointmentDate(this.dashboardService.events);
+
+    this.branchId = localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID);
+    this.msgService.Get_LocalStorage_Observable().subscribe(date => {
+      this.branchId = localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID);
+    });
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    this.getCalendarHeaderCount();
     this.getDefaultPatientAppointmentProfileById();
-    this.getAppointmentStatusCount();
+    console.log('localStorage in oninit first', localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_FIRST_NAME));
+    console.log('localStorage in oninit branch', localStorage.getItem(LOCALSTORAGE_VARIABLES.LOGGED_IN_USER_BRANCH_ID));
   }
 
   private getMode(mediaChange: MediaChange): string {
@@ -101,25 +114,24 @@ export class DashboardComponent implements OnInit {
     //alert(" handleEvent " +JSON.stringify(event))
   }
 
-  onDayHeaderClickInWeekView(event){
-    console.log("event is ", event)
+  onDayHeaderClickInWeekView(event) {
+    console.log('event is', event);
     this.view = this.dashboardConstant.DAY;
-    console.log("event.day.date ", event.day.date)
+    console.log('event.day.date', event.day.date);
     this.viewDate = event.day.date;
   }
 
-  eventTimesChanged(event){
-    console.log("event time changed ", event)
+  eventTimesChanged(event) {
+    console.log('event time changed', event);
   }
 
-  viewDateChange(event){
-    console.log("viewDateChange ", event)
-    //alert("view date is "+event)
+  viewDateChange(event) {
+    console.log('viewDateChange', event);
   }
 
-  viewChange(event){
-    console.log("viewChange ", event)       
-    //alert("view is "+event)
+  viewChange(event) {
+    console.log('viewChange', event);
+    this.getCalendarHeaderCount();
   }
 
   showCheckInBlock(){
@@ -157,9 +169,41 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  getAppointmentStatusCount(){
-    this.appointmentStatusCount = this.dashboardService.getAppointmentStatusCount();
-    console.log("this.appointmentStatusCount ", this.appointmentStatusCount)
+  getCalendarHeaderCount() {
+    const date_type = this.GetDateTypeFromView();
+    this.dashboardService.getCalendarHeaderCount(this.branchId, date_type).subscribe(data => {
+      this.calendarHeaderCountResModel = new CalendarHeaderCountResModel();
+      this.calendarHeaderCountResModel.ALL = data.ALL;
+      this.calendarHeaderCountResModel.PENDING = data.PENDING;
+      this.calendarHeaderCountResModel.CHECKED_IN = data.CHECKED_IN;
+      this.calendarHeaderCountResModel.CANCELLED = data.CANCELLED;
+      this.calendarHeaderCountResModel.CHECKED_OUT = data.CHECKED_OUT;
+      console.log('this.calendarHeaderCountResModel', this.calendarHeaderCountResModel);
+    },
+    (error: HttpErrorResponse) => {
+      console.log('error in calendar count component', error);
+    });
+  }
+
+  GetCalendarAppointmentDetail() {
+    const date_type = this.GetDateTypeFromView();
+    // this.dashboardService.GetCalendarAppointmentList()
+  }
+
+  GetDateTypeFromView() {
+    let date_type: string;
+    switch (this.view) {
+      case DASHBOARD_CONSTANTS.DAY:
+        date_type = 'DAILY';
+        break;
+      case DASHBOARD_CONSTANTS.WEEK:
+        date_type = 'WEEKLY';
+        break;
+      case DASHBOARD_CONSTANTS.MONTH:
+        date_type = 'MONTH';
+        break;
+    }
+    return date_type;
   }
 
   getDefaultPatientAppointmentProfileById(){
@@ -183,6 +227,8 @@ export class DashboardComponent implements OnInit {
       }
     )
   }
+
+
 
   sortCalendarEventByAppointmentDate(events){
     return (events || []).sort((a, b) => a.appointmentDate < b.appointmentDate ? -1 : 1);

@@ -3,26 +3,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class CoreServices{
+export class CoreServices {
 
-    constructor(private httpClient: HttpClient){
+    constructor(private httpClient: HttpClient) {
 
     }
 
-    get(url, options): Observable<any>{
-        return this.httpClient.get(url, options);
+    get(url, options): Observable<any> {
+        return this.httpClient.get<any>(url, options);
     }
 
-    post(url, body, options): Observable<any>{
-        return this.httpClient.post(url, body, options)
+    post(url, body, options): Observable<any> {
+        return this.httpClient.post(url, body, options);
     }
 
-    put(url, body,options): Observable<any>{
-        return this.httpClient.put(url, body,options);
+    put(url, body, options): Observable<any> {
+        return this.httpClient.put(url, body, options);
     }
 
-    delete(url, options): Observable<any>{
-        return this.httpClient.delete(url, options)
+    delete(url, options): Observable<any> {
+        return this.httpClient.delete(url, options);
     }
-
 }

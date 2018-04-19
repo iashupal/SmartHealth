@@ -1,4 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
+import { MatSidenav } from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-vital',
@@ -9,5 +10,12 @@ export class VitalComponent implements OnInit {
 
   ngOnInit() {
   }
+  // toggleSidenav(){
+  //   this.opened = !this.opened;
+  // }
+
+  // sidenavIsClosing(){
+  //   this.opened = false
+  // }
   
 }

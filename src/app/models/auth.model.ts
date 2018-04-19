@@ -7,6 +7,17 @@ export interface BaseRequestModel {
     current_time: string;
 }
 
+export interface BasePaginatedRequestModel {
+    page: any;
+    limit: any;
+}
+
+export class CommonPaginatedResponseModel<T> {
+    page_count: number;
+    total_count: number;
+    page_results: T[];
+}
+
 export interface LoginModel {
     username: string;
     password: string;
@@ -76,5 +87,66 @@ export interface Country {
 
 export interface OrganisationUserLogsReqModel extends BaseRequestModel {
     event: string;
-    branch_id: string;
+    branch_id: number;
+}
+
+export class LogoutReqModel implements BaseRequestModel {
+    current_time: string;
+    branch_id: any;
+}
+
+export class LogoutResModel {
+    url: string;
+}
+
+
+////////////// CALENDAR MODELS ///////////////////////////////////////
+
+export class CalendarHeaderCountResModel {
+    ALL: number;
+    PENDING: number;
+    CHECKED_IN: number;
+    CHECKED_OUT: number;
+    CANCELLED: number;
+}
+
+export class CalendarHeaderCountReqModel implements BaseRequestModel {
+    current_time: string;
+}
+
+export class CalendarAppointmentListReqModel implements BaseRequestModel, BasePaginatedRequestModel {
+    current_time: string;
+    page: any;
+    limit: any;
+}
+
+export class OrganisationPatientInfo {
+    id: number;
+    name: string;
+    email: string;
+    mobile: string;
+    gender: string;
+    dob: string;
+    blood_group: string;
+    occupation: string;
+    uhid: any;
+    smarthealth_id: any;
+}
+
+export class CalendarAppointmentDetail {
+    scheduled_time: string;
+    is_walkin: boolean;
+    is_rescheduled: boolean;
+    status: string;
+    organisation_patient: OrganisationPatientInfo;
+    id: number;
+    visit_id: any;
+    medical_record_document_id: any;
+    appointment_type: string;
+}
+
+export class CalendarAppointmentListResModel implements CommonPaginatedResponseModel<CalendarAppointmentDetail> {
+    page_count: number;
+    total_count: number;
+    page_results: CalendarAppointmentDetail[];
 }

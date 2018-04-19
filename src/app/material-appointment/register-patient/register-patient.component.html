@@ -1,182 +1,182 @@
+<form [formGroup]="patientRegistrationForm">
+    <div class="row fixed-bootstrap-row-margin">
+        <div class="col-md-12">
 
-    <form [formGroup]="patientRegistrationForm">
-        <div class="row fixed-bootstrap-row-margin">
-            <div class="col-md-12">
-
-                <div class="flam-heading" style="margin-top: 30px;">
-                                <h5 class="flam-patient-heading">Patient Details</h5>
-                            </div>
+            <div class="flam-heading" style="margin-top: 30px;">
+                <h5 class="flam-patient-heading">Patient Details</h5>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="firstName" class="flam-input-field flam-input" formControlName="firstName" matInput placeholder="First Name" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="dob" formControlName="dob" class="flam-input-field flam-input" matInput placeholder="Date Of Birth" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="firstName" class="flam-input-field flam-input" formControlName="firstName" matInput placeholder="First Name" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="dob" [max]="maxDate" formControlName="dob" class="flam-input-field flam-input" matInput placeholder="Date Of Birth" required [matDatepicker]="dobPicker">
+                        <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dobPicker></mat-datepicker>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
                 </div>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input formControlName="secondName" class="flam-input-field flam-input" matInput placeholder="Second Name" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-select">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input formControlName="secondName" class="flam-input-field flam-input" matInput placeholder="Second Name" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="bloodGroup" class="flam-input-field flam-select" formControlName="bloodGroup" placeholder="Blood Group" required>
-                            <mat-option value="option">A+</mat-option>
-                            <mat-option value="option">B+</mat-option>
-                            <mat-option value="option">O+</mat-option>
+                            <mat-option value="">Please select blood group</mat-option>
+                            <mat-option *ngFor="let bloodGroup of bloodGroupData" [value]="bloodGroup.name">{{bloodGroup.name}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-                    </div>
                 </div>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="lastName" class="flam-input-field flam-input" formControlName="lastName" matInput placeholder="surname" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
-<div class="flam-patient-input flam-select">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="lastName" class="flam-input-field flam-input" formControlName="lastName" matInput placeholder="surname" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="dialingCode" class="flam-input-field flam-select" formControlName="dialingCode" placeholder="India+91" required>
-                            <mat-option value="option">India+91</mat-option>
-                            <mat-option value="option">UAE+97</mat-option>
+                            <mat-option value="">Please select country code</mat-option>
+                            <mat-option *ngFor="let countryCode of countryCodeData" [value]="countryCode.code">{{countryCode.name}} {{countryCode.code}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-</div>
                 </div>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-select">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="gender" class="flam-input-field flam-select" formControlName="gender" placeholder="Gender" required>
-                            <mat-option value="option">Male</mat-option>
-                            <mat-option value="option">Female</mat-option>
+                            <mat-option value="">Please select gender</mat-option>
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="mobileNumber" class="flam-input-field flam-input" formControlName="mobileNumber" matInput placeholder="Mobile Number" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
+                </div>
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="mobileNumber" class="flam-input-field flam-input" formControlName="mobileNumber" matInput placeholder="Mobile Number" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row fixed-bootstrap-row-margin">
-            <div class="col-md-12">
+    <div class="row fixed-bootstrap-row-margin">
+        <div class="col-md-12">
 
-                
-                <div class="flam-heading" style="margin-top:20px;">
-                                <h5 class="flam-patient-heading">Patient Address</h5>
-                            </div>
+
+            <div class="flam-heading" style="margin-top:20px;">
+                <h5 class="flam-patient-heading">Patient Address</h5>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="address1" class="flam-input-field flam-input" formControlName="address1" matInput placeholder="Address1" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-select">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="address1" class="flam-input-field flam-input" formControlName="address1" matInput placeholder="Address1" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="occupation" class="flam-input-field flam-select" formControlName="occupation" placeholder="Occupation" required>
-                            <mat-option value="option">Profational</mat-option>
-                            <mat-option value="option">Student</mat-option>
+                            <mat-option value="">Please select occupation</mat-option>
+                            <mat-option *ngFor="let tempOccupation of occupationData" [value]="tempOccupation.name">{{tempOccupation.name}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-                    </div>
                 </div>
-
-
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="pincode" class="flam-input-field flam-input" formControlName="pincode" matInput placeholder="Pin Code" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-select">
+
+
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="pincode" class="flam-input-field flam-input" formControlName="pincode" matInput placeholder="Pin Code" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="govIdProof" class="flam-input-field flam-select" formControlName="govIdProof" placeholder="Gov. Issued ID Proof" required>
-                            <mat-option value="option">Voter ID</mat-option>
-                            <mat-option value="option">DL</mat-option>
+                            <mat-option value="">Please select government id</mat-option>
+                            <mat-option *ngFor="let govProof of govProofData" [value]="govProof.name">{{govProof.name}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-                    </div>
                 </div>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
 
-<div class="flam-patient-input flam-select">
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select name="stateId" class="flam-input-field flam-select" formControlName="stateId" placeholder="State" required>
-                            <mat-option value="option">Delhi</mat-option>
-                            <mat-option value="option">UP</mat-option>
+                            <mat-option value="">Please select state</mat-option>
+                            <mat-option *ngFor="let s of stateData" [value]="s.name">{{s.name}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-</div>
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="govIdNumber" class="flam-input-field flam-input" formControlName="govIdNumber" matInput placeholder="Gov. Id Number" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
+                </div>
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="govIdNumber" class="flam-input-field flam-input" formControlName="govIdNumber" matInput placeholder="Gov. Id Number" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
                 </div>
             </div>
-            <div class="col-md col-lg-3 col-md-6">
-                <div class="example-container">
-                    <div class="flam-patient-input flam-select">
+        </div>
+        <div class="col-md col-lg-3 col-md-6">
+            <div class="example-container">
+                <div class="flam-patient-input flam-select">
                     <mat-form-field>
                         <mat-select class="flam-input-field flam-select" name="countryId" formControlName="countryId" placeholder="Country" required>
-                            <mat-option value="option">India</mat-option>
-                            <mat-option value="option">USA</mat-option>
+                            <mat-option value="">Please select country</mat-option>
+                            <mat-option *ngFor="let c of countryData" [value]="c.name">{{c.name}}</mat-option>
                         </mat-select>
                         <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
                     </mat-form-field>
-                    </div>
-                    <div class="flam-patient-input flam-inp">
-                        <mat-form-field>
-                            <input name="emergencyContactNumber" class="flam-input-field flam-input" formControlName="emergencyContactNumber" matInput
-                                placeholder="Emergency Contact Number" required>
-                            <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
-                        </mat-form-field>
-                    </div>
                 </div>
-            </div>
-
-
-            <div class="col-md-12 margin-default">
-                <button type="button" name="button" class="flam-btn_patient flam-view-btn">View</button>
-                <button type="button" name="button" class="flam-btn_patient flam-save-btn">Save</button>
+                <div class="flam-patient-input flam-inp">
+                    <mat-form-field>
+                        <input name="emergencyContactNumber" class="flam-input-field flam-input" formControlName="emergencyContactNumber" matInput placeholder="Emergency Contact Number" required>
+                        <img src="assets/images/side-icon.png" class="flam-sIcon flam-appoint-icon" alt="icon">
+                    </mat-form-field>
+                </div>
             </div>
         </div>
 
-    </form>
+
+        <div class="col-md-12 margin-default">
+            <!-- <button type="button" name="button" class="flam-btn_patient flam-view-btn">View</button> -->
+            <button type="button" name="button" class="flam-btn_patient flam-save-btn" (click)="createPatient()">Save</button>
+        </div>
+    </div>
+
+</form>

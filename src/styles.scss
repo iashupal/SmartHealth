@@ -11,3 +11,6 @@ body {
     background-image: url("./assets/images/bg.png");
     /*    height: 60vh; */
 }
+.dropdown-toggle::after {
+    display: none !important;
+}

@@ -417,6 +417,7 @@ span {
     font-size: 24px;
     margin-left: 10px;
     vertical-align: middle;
+    cursor: pointer;
 }
 .flam-dr-nm-hdr, .flam-menu-btn-hdr {
     height: 70px;
@@ -836,9 +837,12 @@ span {
 }
  #flam-container .flam-patient{
   height: 100%;
-  margin: 0;
+  margin: 0;    
     width: 100%;
 } 
+#flam-container .flam-patient .mat-drawer-container{
+    z-index: 0 !important;
+}
  #flam-container .flam-patient .flam-patient-div{
     height: 100%;
     padding-bottom: 20px;
@@ -1390,7 +1394,7 @@ span {
 .detail-div-lt .hdg {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 17px;
     color: #ff8a4b;
   }
   

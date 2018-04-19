@@ -1,60 +1,71 @@
 /* .flam-pc{
     width:100%;
 } */
+
+
 /* .flam-pc-tags{
     width: 17%;
     position: relative;
     display:inline-block;
     margin-right: 8px;
 } */
-.flam-pc-contain{
+
+.flam-pc-contain {
     margin-top: 0;
     overflow-y: auto;
     height: 590px;
     padding-top: 0;
     padding-right: 10px;
 }
-.flam-pc-contain .flam-in-fld{
+
+.flam-pc-contain .flam-in-fld {
     width: 99%;
     position: relative;
 }
-.flam-pc-contain .flam-in-fld .flam-inv-chip{
+
+.flam-pc-contain .flam-in-fld .flam-inv-chip {
     /* width: 20%; */
     margin-bottom: 10px;
     background-color: #f7f7fa;
     /* text-align: center; */
-        color: #787887;
+    color: #787887;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.02rem;
     padding-right: 0px;
     padding: 10px 40px;
+    cursor: pointer;
     /* margin-top: 5px; */
-/* position: relative; */
+    /* position: relative; */
 }
 
-.flam-in-fld .flam-inv-chip .flam-inv-star{
+.flam-in-fld .flam-inv-chip .flam-inv-star {
     position: absolute;
     color: white;
     margin-left: -40px;
     background: #787887;
     border-radius: 50%;
     font-size: 20px;
-    margin-top: -27px;
+    /* margin-top: -27px; */
     height: 35px;
     width: 35px;
     padding: 7px;
+    cursor: pointer;
+    margin-top: 0px;
 }
 
-.flam-inv-chip.mat-chip:not(.mat-basic-chip):focus .flam-inv-star {
+
+/* .flam-inv-chip.mat-chip:not(.mat-basic-chip):focus .flam-inv-star {
     background: #ff8a4b;
-}
-.flam-inv-chip .mat-chip-remove{
+} */
+
+.flam-inv-chip .mat-chip-remove {
     margin-right: -27px;
     margin-left: 6px;
-} 
+}
 
- /* .flam-pc-tags .flam-pc-heading{
+
+/* .flam-pc-tags .flam-pc-heading{
     font-size: 11px;
     font-weight: 600;
     color: #787887;
@@ -87,19 +98,22 @@
     
     
 } */
-.flam-pc-tags .flam-pc-hd4{
-    padding: 10px 32px !important;
 
+.flam-pc-tags .flam-pc-hd4 {
+    padding: 10px 32px !important;
 }
- .flam-pc-wid{
+
+.flam-pc-wid {
     width: 22% !important;
 }
- .flam-pc-ad-in .flam-ct-fld{
-     width: 38%;
-     bottom: -11px;
+
+.flam-pc-ad-in .flam-ct-fld {
+    width: 38%;
+    bottom: -11px;
     margin-right: 10px;
- }
- .flam-pc-text{
+}
+
+.flam-pc-text {
     width: 100%;
     margin-right: 3%;
     float: left;
@@ -115,22 +129,27 @@
     letter-spacing: 0.05rem;
     box-shadow: inset 0 0 9px #dbdbe4;
 }
- .flam-pc-text .flam-in-fld{
+
+.flam-pc-text .flam-in-fld {
     /* width: 18%; */
     position: relative;
     /* display:inline-block; */
     margin-right: 8px;
 }
-.flam-in-fld .mat-form-field-underline{
+
+.flam-in-fld .mat-form-field-underline {
     height: 0;
 }
-.flam-pc-text .flam-inv-chip .flam-pc-icon-clr{
+
+.flam-pc-text .flam-inv-chip .flam-pc-icon-clr {
     background-color: #ff8a4b;
 }
-.flam-pc-text .flam-pc-h4{
+
+.flam-pc-text .flam-pc-h4 {
     background-color: #fff8f4 !important;
 }
-.flam-lab-input.mat-chip-input{
+
+.flam-lab-input.mat-chip-input {
     width: 100% !important;
     flex: initial;
     /* margin-right: 3%; */
@@ -150,7 +169,7 @@
     clear: both;
 }
 
- .flam-pc-ad-in{
+.flam-pc-ad-in {
     width: 100%;
     border: 1px solid #ffdcc9;
     background-color: #fff8f4;
@@ -160,40 +179,45 @@
     padding-left: 30px;
     margin-top: -8px;
 }
-.flam-pc-ad-in .flam-pc-cancel{
+
+.flam-pc-ad-in .flam-pc-cancel {
     /* margin: 8px; */
     color: #787887;
 }
 
- .flam-pc-ad-in .flam-pc-slct-tag{
+.flam-pc-ad-in .flam-pc-slct-tag {
     /* margin: 2% 0 0 2%; */
     width: 18%;
-} 
+}
 
 .flam-pc-ad-in .flam-in-fld .flam-pc-slct {
     background-color: white;
 }
-.flam-pc-ad-in .flam-in-fld .flam-pc-icon-clr{
+
+.flam-pc-ad-in .flam-in-fld .flam-pc-icon-clr {
     background-color: #ff8a4b;
 }
-.flam-pc-ad-in .flam-pc-add-heading{
+
+.flam-pc-ad-in .flam-pc-add-heading {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     /* margin-left: 2%; */
     color: #787887;
 }
-.flam-pc-ad-in .sgl-div{
+
+.flam-pc-ad-in .sgl-div {
     display: inline-block;
     width: 100%;
     /* margin-right: 10px; */
 }
-.flam-pc-ad-in .sgl-div .flam-fm-fld{
+
+.flam-pc-ad-in .sgl-div .flam-fm-fld {
     width: 18%;
     margin-right: 17px;
-
 }
-.flam-pc-ad-in .sgl-div input{
+
+.flam-pc-ad-in .sgl-div input {
     margin-right: 2%;
     width: 100%;
     padding: 13px 15px;
@@ -207,7 +231,8 @@
     letter-spacing: 0.05rem;
     box-shadow: inset 0 0 9px #dbdbe4;
 }
-.flam-pc-ad-in .sgl-div .flam-btn-patient{
+
+.flam-pc-ad-in .sgl-div .flam-btn-patient {
     border: 0px;
     border-radius: 30px;
     width: 14%;
@@ -219,160 +244,166 @@
     margin-left: 0px;
 }
 
-.flam-pc-ad-in .flam-pc-table{
+.flam-pc-ad-in .flam-pc-table {
     width: 80%;
     background-color: white;
     display: inline-block;
 }
 
-.flam-pc-ad-in .flam-pc-table tr td{
+.flam-pc-ad-in .flam-pc-table tr td {
     text-align: left;
     padding: 12px 20px 10px !important;
     font-weight: 600;
     font-size: 12px;
     color: #787887;
-    font-family: 'Open sans',sans-serif;
+    font-family: 'Open sans', sans-serif;
     cursor: pointer;
 }
-.flam-pc-table-div{
+
+.flam-pc-table-div {
     position: relative;
 }
-.flam-pc-table-div .flam-pc-img{
+
+.flam-pc-table-div .flam-pc-img {
     display: inline-block;
-position: absolute;
-margin-left: 60px;
-margin-top: 10px;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 10px;
 }
 
 
 /* Responsive code */
+
+
 /* 1370px css code */
-@media screen and (max-width:1370px){
-    .flam-pc-h2{
+
+@media screen and (max-width:1370px) {
+    .flam-pc-h2 {
         margin-top: 0;
     }
-    
-    .form-pc-contain{
+    .form-pc-contain {
         margin-top: 0 !important;
         padding-top: 10px;
     }
-     .flam-pc-tags .flam-pc-heading{
+    .flam-pc-tags .flam-pc-heading {
         font-size: 10px;
         padding: 15px 0px;
         padding-left: 40px;
     }
-    .flam-pc-ad-in .sgl-div .flam-fm-fld{
+    .flam-pc-ad-in .sgl-div .flam-fm-fld {
         width: 17%;
         margin-right: 18px;
     }
-    .flam-pc-ad-in .sgl-div .flam-btn-patient{
-        width: 16%;;
+    .flam-pc-ad-in .sgl-div .flam-btn-patient {
+        width: 16%;
+        ;
     }
-    .flam-pc-table-div .flam-pc-img{
-    margin-top: 15px;
+    .flam-pc-table-div .flam-pc-img {
+        margin-top: 15px;
     }
-
-    
-  
-
 }
+
+
 /* 1240px css code */
 
-@media screen and (max-width:1369px) and (min-width:1240px){
+@media screen and (max-width:1369px) and (min-width:1240px) {
+    .flam-pc-tags .flam-pc-heading {
+        padding-left: 37px;
+        padding: 15px 37px;
+    }
+    .flam-pc-tags .flam-pc-hd4 {
+        padding: 10px 32px !important;
+    }
+    .flam-pc-tags .flam-pc-cross {
+        margin-top: 21px;
+    }
+}
 
- .flam-pc-tags .flam-pc-heading{
-padding-left: 37px;
-padding: 15px 37px;
-}
-.flam-pc-tags .flam-pc-hd4{
-    padding: 10px 32px !important;
-} 
-.flam-pc-tags .flam-pc-cross{
-    margin-top: 21px;
-}
-}
 
 /* 1200px css code */
-@media screen and (max-width:1239px){
-    .flam-pc-tags .flam-pc-heading{
+
+@media screen and (max-width:1239px) {
+    .flam-pc-tags .flam-pc-heading {
         padding: 13px 30px !important;
         padding-left: 36px !important;
     }
- .flam-pc-tags .flam-pc-hd4{
+    .flam-pc-tags .flam-pc-hd4 {
         padding: 10px 32px !important;
     }
-    .flam-pc-tags .flam-pc-cross{
+    .flam-pc-tags .flam-pc-cross {
         margin-top: 20px !important;
         margin-right: 2px !important;
     }
 }
 
+
 /* 1024px css code */
-@media screen and (max-width:1199px) and (min-width:1024px){
- .flam-pc-tags{
+
+@media screen and (max-width:1199px) and (min-width:1024px) {
+    .flam-pc-tags {
         width: 22%;
     }
-    .flam-pc-text .flam-pc-tags{
-width: 25%;
+    .flam-pc-text .flam-pc-tags {
+        width: 25%;
     }
-    .flam-pc-tags .flam-pc-heading{
-padding-left: 39px !important;
+    .flam-pc-tags .flam-pc-heading {
+        padding-left: 39px !important;
     }
-.flam-pc-ad-in .sgl-div .flam-fm-fld{
-    width: 20%;
-    margin-right: 8px;
-}
-.flam-pc-ad-in .sgl-div input{
-    margin-right: 1%;
-    width: 100%;
-    padding: 13px 3px;
-    font-size: 13px;
-}
-.flam-pc-ad-in .flam-pc-slct-tag{
-    width: 25%;
-}
-.flam-pc-ad-in .flam-pc-table tr td{
-    font-size: 10px;
-}
-flam-pc-table-div .flam-pc-img{
-    margin-left: 40px;
+    .flam-pc-ad-in .sgl-div .flam-fm-fld {
+        width: 20%;
+        margin-right: 8px;
     }
+    .flam-pc-ad-in .sgl-div input {
+        margin-right: 1%;
+        width: 100%;
+        padding: 13px 3px;
+        font-size: 13px;
+    }
+    .flam-pc-ad-in .flam-pc-slct-tag {
+        width: 25%;
+    }
+    .flam-pc-ad-in .flam-pc-table tr td {
+        font-size: 10px;
+    }
+    flam-pc-table-div .flam-pc-img {
+        margin-left: 40px;
+    }
+}
 
-}
 
 /* 1024px css code */
-@media screen and (max-width:1023px) and (min-width:992px){
-    .flam-pc-tags{
-           width: 25%;
-           margin-right: 20px;
-       }
-       .flam-pc-wid{
-           width: 25% !important;
-       }
-       .flam-pc-text .flam-pc-tags{
-   width: 25%;
-       }
-       .flam-pc-tags .flam-pc-heading{
-   padding-left: 39px !important;
-       }
-   .flam-pc-ad-in .sgl-div .flam-fm-fld{
-       width: 20%;
-       margin-right: 8px;
-   }
-   .flam-pc-ad-in .sgl-div input{
-       margin-right: 1%;
-       width: 100%;
-       padding: 13px 3px;
-       font-size: 12px;
-   }
-   .flam-pc-ad-in .flam-pc-slct-tag{
-       width: 27%;
-   }
-   .flam-pc-ad-in .flam-pc-table tr td{
-       font-size: 10px;
-   }
-   flam-pc-table-div .flam-pc-img{
-    margin-left: 42px;
+
+@media screen and (max-width:1023px) and (min-width:992px) {
+    .flam-pc-tags {
+        width: 25%;
+        margin-right: 20px;
     }
-   
-   }
+    .flam-pc-wid {
+        width: 25% !important;
+    }
+    .flam-pc-text .flam-pc-tags {
+        width: 25%;
+    }
+    .flam-pc-tags .flam-pc-heading {
+        padding-left: 39px !important;
+    }
+    .flam-pc-ad-in .sgl-div .flam-fm-fld {
+        width: 20%;
+        margin-right: 8px;
+    }
+    .flam-pc-ad-in .sgl-div input {
+        margin-right: 1%;
+        width: 100%;
+        padding: 13px 3px;
+        font-size: 12px;
+    }
+    .flam-pc-ad-in .flam-pc-slct-tag {
+        width: 27%;
+    }
+    .flam-pc-ad-in .flam-pc-table tr td {
+        font-size: 10px;
+    }
+    flam-pc-table-div .flam-pc-img {
+        margin-left: 42px;
+    }
+}
